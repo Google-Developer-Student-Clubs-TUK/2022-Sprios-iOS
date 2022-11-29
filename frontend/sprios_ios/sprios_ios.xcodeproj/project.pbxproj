@@ -15,6 +15,7 @@
 		57568A952934934200D65507 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57568A932934934200D65507 /* LaunchScreen.storyboard */; };
 		57568AA029349C9600D65507 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568A9F29349C9600D65507 /* JoinViewController.swift */; };
 		57568AA22934A1D700D65507 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568AA12934A1D700D65507 /* HomeViewController.swift */; };
+		57EFA051293664EF00E46089 /* billabong.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA050293664EF00E46089 /* billabong.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		57568A962934934200D65507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57568A9F29349C9600D65507 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		57568AA12934A1D700D65507 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		57EFA050293664EF00E46089 /* billabong.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = billabong.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				57568A882934934100D65507 /* AppDelegate.swift */,
 				57568A8A2934934100D65507 /* SceneDelegate.swift */,
+				57EFA04F293664DD00E46089 /* Font */,
 				57568A9E29349C3500D65507 /* Models */,
 				57568A9D29349C3000D65507 /* Views */,
 				57568A9C29349C2800D65507 /* Controllers */,
@@ -95,6 +98,14 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		57EFA04F293664DD00E46089 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				57EFA050293664EF00E46089 /* billabong.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +168,7 @@
 			files = (
 				57568A952934934200D65507 /* LaunchScreen.storyboard in Resources */,
 				57568A922934934200D65507 /* Assets.xcassets in Resources */,
+				57EFA051293664EF00E46089 /* billabong.otf in Resources */,
 				57568A902934934100D65507 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

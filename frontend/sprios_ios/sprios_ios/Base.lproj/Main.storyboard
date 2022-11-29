@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpc-Aj-GxI">
-                                <rect key="frame" x="102.66666666666667" y="278" width="187.66666666666663" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpc-Aj-GxI">
+                                <rect key="frame" x="20" y="268" width="353" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Hnb-Fp-XQa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="kp0-qI-KKU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -69,8 +69,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dpc-Aj-GxI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2qa-jm-QM8"/>
-                            <constraint firstItem="dpc-Aj-GxI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="175" id="4MU-ze-TIj"/>
+                            <constraint firstItem="dpc-Aj-GxI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="165" id="4MU-ze-TIj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dpc-Aj-GxI" secondAttribute="trailing" constant="20" id="LHF-bj-8cq"/>
                             <constraint firstItem="uaO-x3-3Cy" firstAttribute="top" secondItem="dpc-Aj-GxI" secondAttribute="bottom" constant="40" id="Z24-at-cPn"/>
+                            <constraint firstItem="dpc-Aj-GxI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bKP-0T-jaN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uaO-x3-3Cy" secondAttribute="trailing" constant="30" id="nnW-Sx-91e"/>
                             <constraint firstItem="uaO-x3-3Cy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="z8C-Al-JRi"/>
                         </constraints>
@@ -78,6 +80,7 @@
                     <navigationItem key="navigationItem" id="AGQ-Qz-WD4"/>
                     <connections>
                         <outlet property="idTextField" destination="eVQ-dZ-RhK" id="rce-IF-R2Y"/>
+                        <outlet property="instagramLabel" destination="dpc-Aj-GxI" id="OTp-FL-v0x"/>
                         <outlet property="joinButton" destination="IEU-KM-gR3" id="yge-8x-riY"/>
                         <outlet property="loginButton" destination="7vW-4W-42R" id="kP3-B5-aBU"/>
                         <outlet property="passwdTextField" destination="oqB-lv-fHI" id="yMa-Hq-WhZ"/>

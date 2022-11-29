@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var instagramLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
-    
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passwdTextField: UITextField!
     
@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         
         setupTextField()
         setupButton()
+        setupUI()
+        
     }
     
     // 텍스트필드 설정
@@ -37,6 +39,10 @@ class ViewController: UIViewController {
     func setupButton() {
         loginButton.layer.cornerRadius = 5
         joinButton.layer.cornerRadius = 5
+    }
+    
+    func setupUI() {
+        instagramLabel.font = UIFont(name: "Billabong", size: 60)
     }
     
     // 화면 터치 시 키보드 내려감
