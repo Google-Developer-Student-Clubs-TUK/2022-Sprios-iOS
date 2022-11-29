@@ -14,6 +14,7 @@
 		57568A922934934200D65507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57568A912934934200D65507 /* Assets.xcassets */; };
 		57568A952934934200D65507 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57568A932934934200D65507 /* LaunchScreen.storyboard */; };
 		57568AA029349C9600D65507 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568A9F29349C9600D65507 /* JoinViewController.swift */; };
+		57568AA22934A1D700D65507 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568AA12934A1D700D65507 /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		57568A942934934200D65507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57568A962934934200D65507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57568A9F29349C9600D65507 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		57568AA12934A1D700D65507 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,11 @@
 		57568A872934934100D65507 /* sprios_ios */ = {
 			isa = PBXGroup;
 			children = (
+				57568A882934934100D65507 /* AppDelegate.swift */,
+				57568A8A2934934100D65507 /* SceneDelegate.swift */,
 				57568A9E29349C3500D65507 /* Models */,
 				57568A9D29349C3000D65507 /* Views */,
 				57568A9C29349C2800D65507 /* Controllers */,
-				57568A882934934100D65507 /* AppDelegate.swift */,
-				57568A8A2934934100D65507 /* SceneDelegate.swift */,
-				57568A8C2934934100D65507 /* ViewController.swift */,
-				57568A9F29349C9600D65507 /* JoinViewController.swift */,
 				57568A8E2934934100D65507 /* Main.storyboard */,
 				57568A912934934200D65507 /* Assets.xcassets */,
 				57568A932934934200D65507 /* LaunchScreen.storyboard */,
@@ -76,6 +76,9 @@
 		57568A9C29349C2800D65507 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				57568A8C2934934100D65507 /* ViewController.swift */,
+				57568A9F29349C9600D65507 /* JoinViewController.swift */,
+				57568AA12934A1D700D65507 /* FirstViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57568AA22934A1D700D65507 /* FirstViewController.swift in Sources */,
 				57568A8D2934934100D65507 /* ViewController.swift in Sources */,
 				57568A892934934100D65507 /* AppDelegate.swift in Sources */,
 				57568AA029349C9600D65507 /* JoinViewController.swift in Sources */,
