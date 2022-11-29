@@ -46,6 +46,12 @@ class ViewController: UIViewController {
     
     // 로그인 버튼 클릭 이벤트
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        if idTextField.text == "test" && passwdTextField.text == "test" {
+            print("성공")
+        } else {
+            print("실패")
+        }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
         
