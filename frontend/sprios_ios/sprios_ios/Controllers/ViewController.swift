@@ -44,9 +44,15 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    // 로그인 버튼 클릭 이벤트
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
         
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
     }
+    
+    // 회원가입 버튼 클릭 이벤트
     @IBAction func joinButtonTapped(_ sender: UIButton) {
         navigationController?.pushViewController(JoinViewController(), animated: true)
     }

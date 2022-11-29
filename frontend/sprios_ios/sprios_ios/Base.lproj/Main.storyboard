@@ -90,7 +90,7 @@
         <!--First-->
         <scene sceneID="gsy-9J-3MB">
             <objects>
-                <viewController id="FZt-oI-eDs" customClass="FirstViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FZt-oI-eDs" customClass="HomeViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XNT-fr-3co">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +138,7 @@
         <!--Navigation Controller-->
         <scene sceneID="HRJ-OW-XqY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dFL-Kf-5cw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="dFL-Kf-5cw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fH8-r3-Fm1">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -156,9 +156,10 @@
         <!--Tab Bar Controller-->
         <scene sceneID="jsc-pf-jNa">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="zcg-vr-pam" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="zcg-vr-pam" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UIr-PW-Dt3">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
