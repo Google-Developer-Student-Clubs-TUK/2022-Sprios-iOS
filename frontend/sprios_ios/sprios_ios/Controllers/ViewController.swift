@@ -73,5 +73,12 @@ class ViewController: UIViewController {
 
 // MARK: - UITextFieldDelegate
 extension ViewController: UITextFieldDelegate {
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.returnKeyType == .next {
+            passwdTextField.becomeFirstResponder()
+        } else if textField.returnKeyType == .done {
+            self.view.endEditing(true)
+        }
+        return true
+    }
 }
