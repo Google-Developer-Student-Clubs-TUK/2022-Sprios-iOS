@@ -100,12 +100,36 @@
                     <view key="view" contentMode="scaleToFill" id="XNT-fr-3co">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="29R-78-jh3">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fxu-tg-U7a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="29R-78-jh3" firstAttribute="leading" secondItem="fxu-tg-U7a" secondAttribute="leading" id="5P2-Ud-JAu"/>
+                            <constraint firstItem="29R-78-jh3" firstAttribute="top" secondItem="fxu-tg-U7a" secondAttribute="top" id="9Ng-Ic-Lxq"/>
+                            <constraint firstItem="fxu-tg-U7a" firstAttribute="trailing" secondItem="29R-78-jh3" secondAttribute="trailing" id="EbR-Wq-TSl"/>
+                            <constraint firstItem="29R-78-jh3" firstAttribute="leading" secondItem="fxu-tg-U7a" secondAttribute="leading" id="Tav-Al-448"/>
+                            <constraint firstItem="fxu-tg-U7a" firstAttribute="trailing" secondItem="29R-78-jh3" secondAttribute="trailing" id="U4I-n8-bTD"/>
+                            <constraint firstItem="29R-78-jh3" firstAttribute="top" secondItem="fxu-tg-U7a" secondAttribute="top" id="WUu-wb-w3M"/>
+                            <constraint firstItem="29R-78-jh3" firstAttribute="leading" secondItem="fxu-tg-U7a" secondAttribute="leading" id="XUc-36-lZe"/>
+                            <constraint firstItem="fxu-tg-U7a" firstAttribute="bottom" secondItem="29R-78-jh3" secondAttribute="bottom" id="YW2-XH-0t6"/>
+                            <constraint firstItem="fxu-tg-U7a" firstAttribute="bottom" secondItem="29R-78-jh3" secondAttribute="bottom" id="hLc-kR-zh7"/>
+                            <constraint firstItem="fxu-tg-U7a" firstAttribute="trailing" secondItem="29R-78-jh3" secondAttribute="trailing" id="hrk-BU-Aqh"/>
+                            <constraint firstItem="fxu-tg-U7a" firstAttribute="bottom" secondItem="29R-78-jh3" secondAttribute="bottom" id="pGE-zG-jaX"/>
+                            <constraint firstItem="29R-78-jh3" firstAttribute="top" secondItem="fxu-tg-U7a" secondAttribute="top" id="r0s-J5-bsr"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="ZmQ-Jv-mTW">
+                        <color key="badgeColor" systemColor="systemBackgroundColor"/>
                         <imageReference key="selectedImage" image="house" catalog="system" symbolScale="large"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="feedTableView" destination="29R-78-jh3" id="Sy0-Z2-ozt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNb-Qh-rCm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,6 +147,7 @@
                         <color key="tintColor" name="AccentColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="K3h-fd-lrr">
+                        <color key="badgeColor" systemColor="labelColor"/>
                         <imageReference key="selectedImage" image="person" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                 </viewController>
@@ -189,6 +214,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

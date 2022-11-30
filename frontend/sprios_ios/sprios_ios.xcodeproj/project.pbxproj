@@ -15,6 +15,8 @@
 		57568A952934934200D65507 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57568A932934934200D65507 /* LaunchScreen.storyboard */; };
 		57568AA029349C9600D65507 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568A9F29349C9600D65507 /* JoinViewController.swift */; };
 		57568AA22934A1D700D65507 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568AA12934A1D700D65507 /* HomeViewController.swift */; };
+		57E93E3B29378BE10005A55C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E93E3929378BE10005A55C /* FeedCell.swift */; };
+		57E93E3C29378BE10005A55C /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E93E3A29378BE10005A55C /* FeedCell.xib */; };
 		57EFA051293664EF00E46089 /* billabong.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA050293664EF00E46089 /* billabong.otf */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		57568A962934934200D65507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57568A9F29349C9600D65507 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		57568AA12934A1D700D65507 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		57E93E3929378BE10005A55C /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		57E93E3A29378BE10005A55C /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		57EFA050293664EF00E46089 /* billabong.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = billabong.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +93,8 @@
 		57568A9D29349C3000D65507 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				57E93E3929378BE10005A55C /* FeedCell.swift */,
+				57E93E3A29378BE10005A55C /* FeedCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 				57568A922934934200D65507 /* Assets.xcassets in Resources */,
 				57EFA051293664EF00E46089 /* billabong.otf in Resources */,
 				57568A902934934100D65507 /* Main.storyboard in Resources */,
+				57E93E3C29378BE10005A55C /* FeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +192,7 @@
 				57568A892934934100D65507 /* AppDelegate.swift in Sources */,
 				57568AA029349C9600D65507 /* JoinViewController.swift in Sources */,
 				57568A8B2934934100D65507 /* SceneDelegate.swift in Sources */,
+				57E93E3B29378BE10005A55C /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
