@@ -51,7 +51,9 @@
                         </constraints>
                         <color key="tintColor" systemColor="labelColor"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" image="ellipsis" catalog="system"/>
+                        <state key="normal" image="ellipsis" catalog="system">
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                        </state>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagram_logo_2022" translatesAutoresizingMaskIntoConstraints="NO" id="in3-Tg-k1p">
                         <rect key="frame" x="8" y="66" width="461" height="461"/>

@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         setupTableView()
-        setupTabBar()
+        setupNavigationBar()
     }
     
     func setupTableView() {
@@ -27,9 +27,52 @@ class HomeViewController: UIViewController {
         feedTableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "FeedCell")
         
     }
-
-    func setupTabBar() {
+    
+    func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "instagram", style: .plain, target: self, action: #selector(instaLabelButtonTapped))
+        let barButtonTextAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "DefaultLabelColor"),
+            .font: UIFont(name: "Billabong", size: 35)!
+        ]
+        let leftButton = self.navigationItem.leftBarButtonItem
+        leftButton?.setTitleTextAttributes(barButtonTextAttributes, for: .normal)
         
+        let dmButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        dmButton.setImage(UIImage(systemName: "plus.app"), for: .normal)
+        dmButton.tintColor = UIColor(named: "DefaultLabelColor")
+        dmButton.addTarget(self, action: #selector(addFeedButtonTapped), for: .touchUpInside)
+        
+        let notiButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        notiButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        notiButton.tintColor = UIColor(named: "DefaultLabelColor")
+        notiButton.addTarget(self, action: #selector(notificationButtonTapped), for: .touchUpInside)
+        
+        let addFeedButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        addFeedButton.setImage(UIImage(systemName: "paperplane"), for: .normal)
+        addFeedButton.tintColor = UIColor(named: "DefaultLabelColor")
+        addFeedButton.addTarget(self, action: #selector(dmButtonTapped), for: .touchUpInside)
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(customView: addFeedButton),
+            UIBarButtonItem(customView: notiButton),
+            UIBarButtonItem(customView: dmButton)
+        ]
+    }
+    
+    @objc func instaLabelButtonTapped() {
+        print("instagram")
+    }
+    
+    @objc func addFeedButtonTapped() {
+        print("Add Feed")
+    }
+    
+    @objc func notificationButtonTapped() {
+        print("Notification")
+    }
+    
+    @objc func dmButtonTapped() {
+        print("plane")
     }
 }
 
@@ -50,3 +93,4 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     
 }
+

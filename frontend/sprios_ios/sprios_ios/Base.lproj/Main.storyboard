@@ -93,7 +93,7 @@
             </objects>
             <point key="canvasLocation" x="192" y="-27"/>
         </scene>
-        <!--Instagram-->
+        <!--Home View Controller-->
         <scene sceneID="gsy-9J-3MB">
             <objects>
                 <viewController id="FZt-oI-eDs" customClass="HomeViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -123,7 +123,7 @@
                             <constraint firstItem="29R-78-jh3" firstAttribute="top" secondItem="fxu-tg-U7a" secondAttribute="top" id="r0s-J5-bsr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Instagram" largeTitleDisplayMode="never" id="ILZ-ez-tnB"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ILZ-ez-tnB"/>
                     <connections>
                         <outlet property="feedTableView" destination="29R-78-jh3" id="Sy0-Z2-ozt"/>
                     </connections>
@@ -269,11 +269,9 @@
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Billabong" family="Billabong" pointSize="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="-200" vertical="0.0"/>
                         </textAttributes>
-                        <navigationBarAppearance key="standardAppearance">
-                            <offsetWrapper key="titlePositionAdjustment" horizontal="-130" vertical="0.0"/>
-                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
