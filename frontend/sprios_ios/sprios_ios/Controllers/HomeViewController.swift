@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         setupTableView()
+        setupTabBar()
     }
     
     func setupTableView() {
@@ -27,6 +28,9 @@ class HomeViewController: UIViewController {
         
     }
 
+    func setupTabBar() {
+        
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {

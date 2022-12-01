@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" restorationIdentifier="FeedCell" selectionStyle="default" indentationWidth="10" rowHeight="570" id="KGk-i7-Jjw" customClass="FeedCell" customModule="sprios_ios" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="418" height="570"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="FeedCell" selectionStyle="default" indentationWidth="10" rowHeight="661" id="KGk-i7-Jjw" customClass="FeedCell" customModule="sprios_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="477" height="661"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="418" height="570"/>
+                <rect key="frame" x="0.0" y="0.0" width="477" height="661"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagram_logo_2022" translatesAutoresizingMaskIntoConstraints="NO" id="bxa-Da-hdD">
@@ -44,7 +44,7 @@
                         </subviews>
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIF-oy-aVS">
-                        <rect key="frame" x="373" y="18" width="30" height="30"/>
+                        <rect key="frame" x="432" y="18" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="Gc5-bu-w87"/>
                             <constraint firstAttribute="height" constant="30" id="yBQ-Yj-f9B"/>
@@ -54,13 +54,13 @@
                         <state key="normal" image="ellipsis" catalog="system"/>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagram_logo_2022" translatesAutoresizingMaskIntoConstraints="NO" id="in3-Tg-k1p">
-                        <rect key="frame" x="8" y="66" width="402" height="402"/>
+                        <rect key="frame" x="8" y="66" width="461" height="461"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="in3-Tg-k1p" secondAttribute="height" multiplier="1:1" id="rJM-VT-TmT"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wdM-nC-h8y">
-                        <rect key="frame" x="15" y="483" width="106" height="25"/>
+                        <rect key="frame" x="15" y="542" width="106" height="25"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lk4-nh-98g">
                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -103,7 +103,7 @@
                         </constraints>
                     </stackView>
                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhK-xo-X9n">
-                        <rect key="frame" x="368" y="483" width="35" height="30"/>
+                        <rect key="frame" x="427" y="542" width="35" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="35" id="4Y0-9F-QEv"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="KtS-1a-FrK"/>
@@ -116,22 +116,22 @@
                         </state>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DBX-xm-wvc">
-                        <rect key="frame" x="15" y="523" width="388" height="39"/>
+                        <rect key="frame" x="15" y="582" width="447" height="71"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vA6-ID-XTi">
-                                <rect key="frame" x="0.0" y="0.0" width="388" height="9.6666666666666661"/>
+                                <rect key="frame" x="0.0" y="0.0" width="447" height="20.333333333333332"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bh6-Mu-6fx">
-                                <rect key="frame" x="0.0" y="14.666666666666629" width="388" height="9.6666666666666643"/>
+                                <rect key="frame" x="0.0" y="25.333333333333371" width="447" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9U-dj-Zy2">
-                                <rect key="frame" x="0.0" y="29.333333333333375" width="388" height="9.6666666666666679"/>
+                                <rect key="frame" x="0.0" y="50.666666666666629" width="447" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -161,7 +161,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="129.7709923664122" y="144.36619718309859"/>
+            <point key="canvasLocation" x="174.80916030534351" y="176.40845070422537"/>
         </tableViewCell>
     </objects>
     <resources>
