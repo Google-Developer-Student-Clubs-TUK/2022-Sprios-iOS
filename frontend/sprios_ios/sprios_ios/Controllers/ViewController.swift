@@ -66,7 +66,8 @@ class ViewController: UIViewController {
     
     // 회원가입 버튼 클릭 이벤트
     @IBAction func joinButtonTapped(_ sender: UIButton) {
-        navigationController?.pushViewController(JoinViewController(), animated: true)
+        let joinVC = storyboard?.instantiateViewController(withIdentifier: "JoinVC") as! JoinViewController
+        navigationController?.pushViewController(joinVC, animated: true)
     }
     
 }

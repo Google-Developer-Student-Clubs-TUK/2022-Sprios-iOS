@@ -60,7 +60,6 @@
                                         </state>
                                         <connections>
                                             <action selector="joinButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ABK-Jy-ac9"/>
-                                            <segue destination="w9y-mh-Vjn" kind="show" id="3cB-hi-dXm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -92,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192" y="-27"/>
+            <point key="canvasLocation" x="2702" y="-751"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="gsy-9J-3MB">
@@ -209,13 +208,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMx-It-GcO">
-                                <rect key="frame" x="76.666666666666671" y="108" width="239.66666666666663" height="36"/>
+                                <rect key="frame" x="76.666666666666671" y="64" width="239.66666666666663" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jkg-vK-ehk">
-                                <rect key="frame" x="-28.666666666666657" y="164" width="450.33333333333326" height="50.666666666666657"/>
+                                <rect key="frame" x="-28.666666666666657" y="120.00000000000001" width="450.33333333333326" height="50.666666666666671"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvJ-zJ-vXD">
                                         <rect key="frame" x="0.0" y="0.0" width="450.33333333333331" height="39.666666666666664"/>
@@ -235,7 +234,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hSY-Tl-8Wx">
-                                <rect key="frame" x="36.666666666666657" y="234.66666666666663" width="320" height="160"/>
+                                <rect key="frame" x="36.666666666666657" y="190.66666666666663" width="320" height="160"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gz9-zU-8yz">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="43.333333333333336"/>
@@ -251,7 +250,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Next"/>
                                         <connections>
-                                            <segue destination="eFq-Ee-VdI" kind="show" id="Egz-Fj-2Vz"/>
+                                            <action selector="nextButton:" destination="w9y-mh-Vjn" eventType="touchUpInside" id="kEI-ZT-eCw"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="You may receive e-mail notifications from us for security and login purposes." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="256-Q7-OkT">
@@ -289,12 +288,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkO-mv-DIz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974.8091603053435" y="-751.4084507042254"/>
+            <point key="canvasLocation" x="3810" y="-751"/>
         </scene>
         <!--Auth Email Controller-->
         <scene sceneID="675-J6-zGw">
             <objects>
-                <viewController id="eFq-Ee-VdI" customClass="AuthEmailController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthEmailVC" id="eFq-Ee-VdI" customClass="AuthEmailController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sTn-R0-Nvf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxw-eE-bA6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2953" y="-751"/>
+            <point key="canvasLocation" x="4634" y="-751"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HRJ-OW-XqY">
@@ -323,7 +322,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otT-cj-O4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-634" y="-27"/>
+            <point key="canvasLocation" x="1810" y="-751"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jsc-pf-jNa">
@@ -346,7 +345,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnh-5J-viq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1976" y="-27"/>
+            <point key="canvasLocation" x="2702" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OC5-S8-Rm8">

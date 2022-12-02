@@ -22,8 +22,8 @@ class JoinViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
-        
-        navigationController?.pushViewController(AuthEmailController(), animated: true)
+        let authEmailVC = storyboard?.instantiateViewController(withIdentifier: "AuthEmailVC") as! AuthEmailController
+        navigationController?.pushViewController(authEmailVC, animated: true)
         
     }
     
