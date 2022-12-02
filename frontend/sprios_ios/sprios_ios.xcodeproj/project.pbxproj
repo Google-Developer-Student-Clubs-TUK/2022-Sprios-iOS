@@ -19,6 +19,7 @@
 		57E93E3B29378BE10005A55C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E93E3929378BE10005A55C /* FeedCell.swift */; };
 		57E93E3C29378BE10005A55C /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E93E3A29378BE10005A55C /* FeedCell.xib */; };
 		57EFA051293664EF00E46089 /* billabong.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA050293664EF00E46089 /* billabong.otf */; };
+		957835E22939236C00A8FC51 /* AuthEmailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957835E12939236C00A8FC51 /* AuthEmailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		57E93E3929378BE10005A55C /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		57E93E3A29378BE10005A55C /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		57EFA050293664EF00E46089 /* billabong.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = billabong.otf; sourceTree = "<group>"; };
+		957835E12939236C00A8FC51 /* AuthEmailController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AuthEmailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +87,8 @@
 		57568A9C29349C2800D65507 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				957835DE293920C300A8FC51 /* signUp */,
 				57568A8C2934934100D65507 /* ViewController.swift */,
-				57568A9F29349C9600D65507 /* JoinViewController.swift */,
 				57568AA12934A1D700D65507 /* HomeViewController.swift */,
 				573261502938EDDD00C16D3A /* MyPageViewController.swift */,
 			);
@@ -115,6 +117,15 @@
 				57EFA050293664EF00E46089 /* billabong.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		957835DE293920C300A8FC51 /* signUp */ = {
+			isa = PBXGroup;
+			children = (
+				57568A9F29349C9600D65507 /* JoinViewController.swift */,
+				957835E12939236C00A8FC51 /* AuthEmailController.swift */,
+			);
+			path = signUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 				57568AA22934A1D700D65507 /* HomeViewController.swift in Sources */,
 				57568A8D2934934100D65507 /* ViewController.swift in Sources */,
 				573261512938EDDD00C16D3A /* MyPageViewController.swift in Sources */,
+				957835E22939236C00A8FC51 /* AuthEmailController.swift in Sources */,
 				57568A892934934100D65507 /* AppDelegate.swift in Sources */,
 				57568AA029349C9600D65507 /* JoinViewController.swift in Sources */,
 				57568A8B2934934100D65507 /* SceneDelegate.swift in Sources */,
