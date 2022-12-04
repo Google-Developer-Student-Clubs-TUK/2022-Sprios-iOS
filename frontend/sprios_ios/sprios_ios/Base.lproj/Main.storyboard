@@ -96,7 +96,7 @@
         <!--New Post View Controller-->
         <scene sceneID="ZMB-k3-ZGs">
             <objects>
-                <viewController id="FST-62-cCk" customClass="NewPostViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewPostVC" id="FST-62-cCk" customClass="NewPostViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mq9-R3-61U">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

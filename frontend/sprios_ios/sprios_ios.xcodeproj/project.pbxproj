@@ -55,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57326A4A293C8E36003B7343 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				57E93E3929378BE10005A55C /* FeedCell.swift */,
+				57E93E3A29378BE10005A55C /* FeedCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		57326A4B293C8E4F003B7343 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				57568AA12934A1D700D65507 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		57568A7C2934934100D65507 = {
 			isa = PBXGroup;
 			children = (
@@ -91,11 +108,11 @@
 		57568A9C29349C2800D65507 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				57326A4B293C8E4F003B7343 /* Home */,
 				957835DE293920C300A8FC51 /* signUp */,
 				57568A8C2934934100D65507 /* ViewController.swift */,
-				57568AA12934A1D700D65507 /* HomeViewController.swift */,
-				573261502938EDDD00C16D3A /* MyPageViewController.swift */,
 				57326A48293C8C58003B7343 /* NewPostViewController.swift */,
+				573261502938EDDD00C16D3A /* MyPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -103,8 +120,7 @@
 		57568A9D29349C3000D65507 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				57E93E3929378BE10005A55C /* FeedCell.swift */,
-				57E93E3A29378BE10005A55C /* FeedCell.xib */,
+				57326A4A293C8E36003B7343 /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";

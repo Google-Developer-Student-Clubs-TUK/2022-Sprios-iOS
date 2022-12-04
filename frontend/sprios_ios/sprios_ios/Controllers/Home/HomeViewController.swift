@@ -64,7 +64,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc func addFeedButtonTapped() {
-        print("Add Feed")
+        let newPostVC = storyboard?.instantiateViewController(withIdentifier: "NewPostVC") as! NewPostViewController
+        navigationController?.pushViewController(newPostVC, animated: true)
     }
     
     @objc func notificationButtonTapped() {
