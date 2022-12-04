@@ -8,8 +8,6 @@
 import UIKit
 class JoinViewController: UIViewController {
     
-    //    @IBOutlet weak var testLabel: UILabel!
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var emailField: UITextField!
@@ -21,12 +19,12 @@ class JoinViewController: UIViewController {
         
     }
     
-    @IBAction func nextButton(_ sender: UIButton) {
+    // 이메일 인증 클릭 이벤트
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        let authEmailVC = storyboard?.instantiateViewController(withIdentifier: "AuthEmailVC") as! AuthEmailController
+        navigationController?.pushViewController(authEmailVC, animated: true)
         
         navigationController?.pushViewController(AuthEmailController(), animated: true)
         
     }
-    
-    
-    
 }

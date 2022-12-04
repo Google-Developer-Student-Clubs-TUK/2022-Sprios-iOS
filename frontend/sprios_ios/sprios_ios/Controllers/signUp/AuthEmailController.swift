@@ -6,8 +6,11 @@
 //
 
 import UIKit
+
 class AuthEmailController: UIViewController {
     
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var confirmCodeField: UITextField!
     
     override func viewDidLoad() {
         
@@ -16,5 +19,8 @@ class AuthEmailController: UIViewController {
     }
     
     
-    
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        let addNameVC = storyboard?.instantiateViewController(withIdentifier: "AddNameVC") as! AddNameController
+        navigationController?.pushViewController(addNameVC, animated: true)
+    }
 }
