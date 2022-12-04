@@ -19,12 +19,10 @@ class JoinViewController: UIViewController {
         
     }
     
+
     // 이메일 인증 클릭 이벤트
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         let authEmailVC = storyboard?.instantiateViewController(withIdentifier: "AuthEmailVC") as! AuthEmailController
-        navigationController?.pushViewController(authEmailVC, animated: true)
-        
-        navigationController?.pushViewController(AuthEmailController(), animated: true)
-        
+        navigationController?.pushViewController(authEmailVC, animated: true)    
     }
 }
