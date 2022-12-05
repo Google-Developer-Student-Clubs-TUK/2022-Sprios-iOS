@@ -8,22 +8,36 @@
 import UIKit
 
 class NewPostViewController: UIViewController {
-
+    
+    @IBOutlet weak var postTextView: UITextView!
+    
+    private let textViewPlaceHolder: String = "문구 입력."
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setupTextView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupTextView() {
+        postTextView.delegate = self
+        postTextView.text = textViewPlaceHolder
+        postTextView.textColor = .lightGray
     }
-    */
+    
+}
 
+extension NewPostViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == textViewPlaceHolder {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            textView.text = textViewPlaceHolder
+            textView.textColor = .lightGray
+        }
+    }
 }

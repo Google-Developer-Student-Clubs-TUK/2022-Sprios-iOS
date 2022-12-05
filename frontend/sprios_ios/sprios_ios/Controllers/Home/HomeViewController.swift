@@ -65,6 +65,7 @@ class HomeViewController: UIViewController {
     
     @objc func addFeedButtonTapped() {
         let newPostVC = storyboard?.instantiateViewController(withIdentifier: "NewPostVC") as! NewPostViewController
+        newPostVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(newPostVC, animated: true)
     }
     

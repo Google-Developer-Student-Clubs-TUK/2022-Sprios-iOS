@@ -399,6 +399,9 @@
                             <constraint firstItem="ZWY-Gh-UQA" firstAttribute="leading" secondItem="mq9-R3-61U" secondAttribute="leading" id="zAY-jO-vAc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="postTextView" destination="VTJ-h9-0Ng" id="q0t-6Z-60K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcO-1b-Umv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
