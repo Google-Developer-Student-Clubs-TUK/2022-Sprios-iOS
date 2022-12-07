@@ -25,6 +25,10 @@ class NewPostViewController: UIViewController {
         postTextView.textColor = .lightGray
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
 
 extension NewPostViewController: UITextViewDelegate {
