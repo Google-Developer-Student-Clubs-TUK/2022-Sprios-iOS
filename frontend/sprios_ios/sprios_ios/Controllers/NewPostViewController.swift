@@ -9,12 +9,16 @@ import UIKit
 
 class NewPostViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var postTextView: UITextView!
     
     private let textViewPlaceHolder: String = "문구 입력."
+    var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageView.image = image
         
         setupTextView()
     }

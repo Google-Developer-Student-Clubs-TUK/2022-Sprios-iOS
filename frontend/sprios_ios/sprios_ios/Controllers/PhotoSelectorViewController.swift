@@ -16,6 +16,11 @@ struct CVCell {
 class PhotoSelectorViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var selectImage: UIImageView!
+    
+    // 사진 선택 여부
+    var photoSelected = [Bool](repeating: false, count: photoCount)
+    var previewSelectedIndex = 0
     
     // 컬렉션 뷰의 레이아웃을 담당하는 객체
     let flowLayout = UICollectionViewFlowLayout()
@@ -62,6 +67,8 @@ class PhotoSelectorViewController: UIViewController {
     @objc func nextButtonTapped() {
         let newPostVC = storyboard?.instantiateViewController(withIdentifier: "NewPostVC") as! NewPostViewController
         
+        newPostVC.image = selectImage.image
+        
         navigationController?.pushViewController(newPostVC, animated: true)
     }
 }
@@ -86,10 +93,20 @@ extension PhotoSelectorViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! PhotoCell
         
-        cell.contentView.layer.borderWidth = 5
-        cell.contentView.layer.borderColor = UIColor.systemYellow.cgColor
+        // 이전에 선택된 사진의 border 설정 제거
+        let previewCell = collectionView.cellForItem(at: [0, previewSelectedIndex]) as! PhotoCell
+        previewCell.contentView.layer.borderWidth = 0
+        previewCell.contentView.layer.borderColor = UIColor.systemBackground.cgColor
+        
+        // 새로 선택된 사진의 border 설정
+        let selectCell = collectionView.cellForItem(at: indexPath) as! PhotoCell
+        selectCell.contentView.layer.borderWidth = 5
+        selectCell.contentView.layer.borderColor = UIColor.systemYellow.cgColor
+        
+        selectImage.image = selectCell.photo.image
+        
+        previewSelectedIndex = indexPath.item
     }
     
     
