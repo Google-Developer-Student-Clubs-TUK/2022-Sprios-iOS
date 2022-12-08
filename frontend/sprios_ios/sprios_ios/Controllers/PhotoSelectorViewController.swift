@@ -28,6 +28,7 @@ class PhotoSelectorViewController: UIViewController {
         setupNavigationBar()
     }
     
+    // 컬렉션 뷰 세팅
     func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -35,7 +36,7 @@ class PhotoSelectorViewController: UIViewController {
         setupFlowLayout()
         collectionView.collectionViewLayout = flowLayout
     }
-    
+
     func setupFlowLayout() {
         
         let collectionCellWidth = (UIScreen.main.bounds.width - CVCell.spacingWidth * (CVCell.cellColumns - 1)) / CVCell.cellColumns
@@ -47,6 +48,7 @@ class PhotoSelectorViewController: UIViewController {
         flowLayout.minimumLineSpacing = CVCell.spacingWidth
     }
     
+    // 네비게이션 바 설정
     func setupNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(stopButtonTapped))
         
@@ -64,17 +66,30 @@ class PhotoSelectorViewController: UIViewController {
     }
 }
 
+
+// MARK: - Delegate, Datasource
 extension PhotoSelectorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        photoCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         
-        cell.photo.image = UIImage(named: "Instagram_logo_2022")
+        let asset = allPhotos?.object(at: indexPath.row)
+        
+        cell.photo.fetchImage(asset: asset!, contentMode: .aspectFit, targetSize: cell.photo.frame.size)
+        
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! PhotoCell
+        
+        cell.contentView.layer.borderWidth = 5
+        cell.contentView.layer.borderColor = UIColor.systemYellow.cgColor
     }
     
     
