@@ -9,13 +9,14 @@ import Foundation
 import UIKit
 
 struct User: Codable {
-    var id: String
-    var password: String
-    var email: String
-    var phone: String
-    var name: String
-    var gender: String
-    var introduction: String?
+    var id: String              // 아이디
+    var password: String        // 비밀번호
+    var email: String           // 이메일
+    var phone: String           // 핸드폰
+    var name: String            // 이름
+    var gender: String          // 성별
+    var introduction: String?   // 소개글
+    var profileImage: Data?     // 프로필 사진
     
     // 이미지 저장할 변수 추가
 }

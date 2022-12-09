@@ -95,19 +95,29 @@ extension PhotoSelectorViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // 이전에 선택된 사진의 border 설정 제거
-        let previewCell = collectionView.cellForItem(at: [0, previewSelectedIndex]) as! PhotoCell
-        previewCell.contentView.layer.borderWidth = 0
-        previewCell.contentView.layer.borderColor = UIColor.systemBackground.cgColor
+//        let previewCell = collectionView.cellForItem(at: [0, previewSelectedIndex]) as! PhotoCell
+//        previewCell.contentView.layer.borderWidth = 0
+//        previewCell.contentView.layer.borderColor = UIColor.systemBackground.cgColor
         
         // 새로 선택된 사진의 border 설정
         let selectCell = collectionView.cellForItem(at: indexPath) as! PhotoCell
-        selectCell.contentView.layer.borderWidth = 5
-        selectCell.contentView.layer.borderColor = UIColor.systemYellow.cgColor
+//        selectCell.contentView.layer.borderWidth = 5
+//        selectCell.contentView.layer.borderColor = UIColor.systemYellow.cgColor
         
         selectImage.image = selectCell.photo.image
         
-        previewSelectedIndex = indexPath.item
+//        previewSelectedIndex = indexPath.item
+        
     }
     
+    // cell이 나타날 때 (나타난 셀의 개수만큼 호출)
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print(#function)
+    }
+    
+    // cell이 나타날 때 (사라진 셀의 개수만큼 호출)
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        print(#function)
+    }
     
 }
