@@ -52,10 +52,15 @@ class ViewController: UIViewController {
     
     // 로그인 버튼 클릭 이벤트
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        
+        // 서버로 ID, PW 보내기
+        
         if idTextField.text == "test" && passwdTextField.text == "test" {
             print("성공")
         } else {
-            print("실패")
+            let alert = UIAlertController(title: "로그인 실패", message: "아이디 또는 패스워드를 다시 확인하세요.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default))
+            self.present(alert, animated: true, completion: nil)
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
