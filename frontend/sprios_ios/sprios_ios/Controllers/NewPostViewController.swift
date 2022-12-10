@@ -21,6 +21,7 @@ class NewPostViewController: UIViewController {
         imageView.image = image
         
         setupTextView()
+        setupNavigationBar()
     }
     
     func setupTextView() {
@@ -29,8 +30,16 @@ class NewPostViewController: UIViewController {
         postTextView.textColor = .lightGray
     }
     
+    func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(rightBarButtonTapped))
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    @objc func rightBarButtonTapped() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }
