@@ -17,6 +17,4 @@ struct User: Codable {
     var gender: String          // 성별
     var introduction: String?   // 소개글
     var profileImage: Data?     // 프로필 사진
-    
-    // 이미지 저장할 변수 추가
 }

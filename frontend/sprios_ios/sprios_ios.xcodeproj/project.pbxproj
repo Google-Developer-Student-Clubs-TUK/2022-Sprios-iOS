@@ -13,6 +13,7 @@
 		57326A4F2940AB27003B7343 /* PhotoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A4E2940AB27003B7343 /* PhotoSelectorViewController.swift */; };
 		57326A512940AD8C003B7343 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A502940AD8C003B7343 /* PhotoCell.swift */; };
 		57326A5429420779003B7343 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A5329420779003B7343 /* UIImageView+Ext.swift */; };
+		57326A5629450464003B7343 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A5529450464003B7343 /* Post.swift */; };
 		57568A892934934100D65507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568A882934934100D65507 /* AppDelegate.swift */; };
 		57568A8B2934934100D65507 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568A8A2934934100D65507 /* SceneDelegate.swift */; };
 		57568A8D2934934100D65507 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568A8C2934934100D65507 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		57326A4E2940AB27003B7343 /* PhotoSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewController.swift; sourceTree = "<group>"; };
 		57326A502940AD8C003B7343 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		57326A5329420779003B7343 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		57326A5529450464003B7343 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		57568A852934934100D65507 /* sprios_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sprios_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57568A882934934100D65507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57568A8A2934934100D65507 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				57326A4C293DE469003B7343 /* User.swift */,
+				57326A5529450464003B7343 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				57326A5429420779003B7343 /* UIImageView+Ext.swift in Sources */,
 				57326A512940AD8C003B7343 /* PhotoCell.swift in Sources */,
 				57326A4F2940AB27003B7343 /* PhotoSelectorViewController.swift in Sources */,
+				57326A5629450464003B7343 /* Post.swift in Sources */,
 				57568A8B2934934100D65507 /* SceneDelegate.swift in Sources */,
 				57E93E3B29378BE10005A55C /* FeedCell.swift in Sources */,
 				95A237A12939CB6F0041498C /* AddNameController.swift in Sources */,
