@@ -8,22 +8,53 @@
 import UIKit
 
 class NewPostViewController: UIViewController {
-
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var postTextView: UITextView!
+    
+    private let textViewPlaceHolder: String = "문구 입력."
+    var image: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        imageView.image = image
+        
+        setupTextView()
+        setupNavigationBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupTextView() {
+        postTextView.delegate = self
+        postTextView.text = textViewPlaceHolder
+        postTextView.textColor = .lightGray
     }
-    */
+    
+    func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(rightBarButtonTapped))
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    @objc func rightBarButtonTapped() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+}
 
+extension NewPostViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == textViewPlaceHolder {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            textView.text = textViewPlaceHolder
+            textView.textColor = .lightGray
+        }
+    }
 }
