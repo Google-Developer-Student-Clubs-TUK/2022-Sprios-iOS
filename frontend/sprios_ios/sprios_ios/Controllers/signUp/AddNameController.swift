@@ -8,8 +8,8 @@
 import UIKit
 class AddNameController: UIViewController {
     
-    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         
@@ -17,4 +17,9 @@ class AddNameController: UIViewController {
         
     }
     
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        let createPwdVC = storyboard?.instantiateViewController(withIdentifier: "CreatePwdVC") as! CreatePwdController
+        navigationController?
+            .pushViewController(createPwdVC, animated: true)
+    }
 }
