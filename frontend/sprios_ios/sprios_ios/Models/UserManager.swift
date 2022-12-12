@@ -49,12 +49,6 @@ class UserManager {
                 print("Error: Did not receive data")
                 return
             }
-            
-//            // HTTP 200번대 정상코드인 경우만 다음 코드로 넘어감
-//            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
-//                print("Error: HTTP request failed")
-//                return
-//            }
 
             // 원하는 모델이 있다면, JSONDecoder로 decode코드로 구현 ⭐️
             print(String(decoding: safeData, as: UTF8.self))
@@ -64,4 +58,5 @@ class UserManager {
             completion(response.statusCode)
         }.resume()
     }
+
 }

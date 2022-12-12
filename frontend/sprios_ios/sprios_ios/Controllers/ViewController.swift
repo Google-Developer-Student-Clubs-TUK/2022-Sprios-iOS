@@ -56,12 +56,22 @@ class ViewController: UIViewController {
         // 서버로 ID, PW 보내기
         UserManager.shared.checkingUser(account: idTextField.text!, password: passwdTextField.text!) { status in
             if status == 200 {
-                print("성공")
+                DispatchQueue.main.async {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+                    
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                }
             } else {
-                print("실패")
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "로그인 실패", message: "아이디 또는 패스워드를 다시 확인하세요.", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "확인", style: .default))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
             }
         }
-        
+//        
 //        if idTextField.text == "test" && passwdTextField.text == "test" {
 //            print("성공")
 //        } else {
@@ -70,10 +80,7 @@ class ViewController: UIViewController {
 //            self.present(alert, animated: true, completion: nil)
 //        }
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-        
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+
     }
     
     // 회원가입 버튼 클릭 이벤트
