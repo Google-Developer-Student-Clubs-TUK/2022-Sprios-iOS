@@ -18,8 +18,9 @@ class AddNameController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
-        let createPwdVC = storyboard?.instantiateViewController(withIdentifier: "CreatePwdVC") as! CreatePwdController
-        navigationController?
-            .pushViewController(createPwdVC, animated: true)
+        
+        let addUsernameVC = storyboard?.instantiateViewController(withIdentifier: "AddUsernameVC") as! AddUsernameController
+        navigationController?.pushViewController(addUsernameVC, animated: true)
+        
     }
 }
