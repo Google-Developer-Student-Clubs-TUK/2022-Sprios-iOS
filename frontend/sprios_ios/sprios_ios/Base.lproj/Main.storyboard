@@ -578,8 +578,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ql4-xs-4bO">
-                                <rect key="frame" x="143" y="145.33333333333334" width="235" height="45.666666666666657"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ql4-xs-4bO">
+                                <rect key="frame" x="143" y="146.66666666666666" width="235" height="42.666666666666657"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Ng-xv-5mB">
                                         <rect key="frame" x="0.0" y="0.0" width="235" height="20.333333333333332"/>
@@ -605,7 +605,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gWJ-kF-quE">
-                                        <rect key="frame" x="0.0" y="25.333333333333314" width="235" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="22.333333333333343" width="235" height="20.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTn-Nj-90y">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="20.333333333333332"/>

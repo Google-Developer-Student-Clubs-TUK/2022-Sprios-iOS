@@ -29,7 +29,21 @@ class MyPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        profileImage.image = UIImage(named: "Instagram_logo_2022")
+        
         setupCollectionView()
+        setupNavigationBar()
+        setupProfileImage()
+        setupEditProfileButton()
+    }
+    
+    func setupProfileImage() {
+        profileImage.layer.cornerRadius = profileImage.frame.width / 2
+    }
+    
+    func setupEditProfileButton() {
+        editProfileButton.layer.cornerRadius = 5
+        editProfileButton.backgroundColor = .systemGray3
     }
     
     // 컬렉션 뷰 세팅
@@ -39,6 +53,8 @@ class MyPageViewController: UIViewController {
         
         setupFlowLayout()
         collectionView.collectionViewLayout = flowLayout
+        
+        collectionView.bounces = false
     }
 
     func setupFlowLayout() {
@@ -52,6 +68,40 @@ class MyPageViewController: UIViewController {
         flowLayout.minimumLineSpacing = CVCell1.spacingWidth
     }
 
+    func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "id", style: .plain, target: self, action: nil)
+        let barButtonTextAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "DefaultLabelColor"),
+            .font: UIFont.systemFont(ofSize: 30, weight: .medium),
+        ]
+        let leftButton = self.navigationItem.leftBarButtonItem
+        leftButton?.setTitleTextAttributes(barButtonTextAttributes, for: .normal)
+        
+        let moreButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        moreButton.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
+        moreButton.tintColor = UIColor(named: "DefaultLabelColor")
+        moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
+        
+        let addFeedButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        addFeedButton.setImage(UIImage(systemName: "plus.app"), for: .normal)
+        addFeedButton.tintColor = UIColor(named: "DefaultLabelColor")
+        addFeedButton.addTarget(self, action: #selector(addFeedButtonTapped), for: .touchUpInside)
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(customView: moreButton),
+            UIBarButtonItem(customView: addFeedButton)
+        ]
+    }
+    
+    @objc func moreButtonTapped() {
+        
+    }
+    
+    @objc func addFeedButtonTapped() {
+        let photoSelectorVC = storyboard?.instantiateViewController(withIdentifier: "PhotoSelectorVC") as! PhotoSelectorViewController
+        photoSelectorVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(photoSelectorVC, animated: false)
+    }
 }
 
 // MARK: - CollectionView Delegate, DataSource
