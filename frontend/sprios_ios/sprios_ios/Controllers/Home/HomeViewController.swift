@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var feedTableView: UITableView!
     
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +28,11 @@ class HomeViewController: UIViewController {
         feedTableView.rowHeight = UITableView.automaticDimension
         feedTableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "FeedCell")
         
+        
+        //refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        feedTableView.addSubview(refreshControl) // not required when using UITableViewController
+        
     }
     
     func setupNavigationBar() {
@@ -37,26 +44,32 @@ class HomeViewController: UIViewController {
         let leftButton = self.navigationItem.leftBarButtonItem
         leftButton?.setTitleTextAttributes(barButtonTextAttributes, for: .normal)
         
-        let dmButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        dmButton.setImage(UIImage(systemName: "plus.app"), for: .normal)
-        dmButton.tintColor = UIColor(named: "DefaultLabelColor")
-        dmButton.addTarget(self, action: #selector(addFeedButtonTapped), for: .touchUpInside)
+        let addFeedButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        addFeedButton.setImage(UIImage(systemName: "plus.app"), for: .normal)
+        addFeedButton.tintColor = UIColor(named: "DefaultLabelColor")
+        addFeedButton.addTarget(self, action: #selector(addFeedButtonTapped), for: .touchUpInside)
         
         let notiButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         notiButton.setImage(UIImage(systemName: "heart"), for: .normal)
         notiButton.tintColor = UIColor(named: "DefaultLabelColor")
         notiButton.addTarget(self, action: #selector(notificationButtonTapped), for: .touchUpInside)
         
-        let addFeedButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        addFeedButton.setImage(UIImage(systemName: "paperplane"), for: .normal)
-        addFeedButton.tintColor = UIColor(named: "DefaultLabelColor")
-        addFeedButton.addTarget(self, action: #selector(dmButtonTapped), for: .touchUpInside)
+        let dmButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        dmButton.setImage(UIImage(systemName: "paperplane"), for: .normal)
+        dmButton.tintColor = UIColor(named: "DefaultLabelColor")
+        dmButton.addTarget(self, action: #selector(dmButtonTapped), for: .touchUpInside)
         
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(customView: addFeedButton),
+            UIBarButtonItem(customView: dmButton),
             UIBarButtonItem(customView: notiButton),
-            UIBarButtonItem(customView: dmButton)
+            UIBarButtonItem(customView: addFeedButton)
         ]
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        
+        // refresh 종료 시점
+        refreshControl.endRefreshing()
     }
     
     @objc func instaLabelButtonTapped() {
@@ -64,9 +77,6 @@ class HomeViewController: UIViewController {
     }
     
     @objc func addFeedButtonTapped() {
-//        let newPostVC = storyboard?.instantiateViewController(withIdentifier: "NewPostVC") as! NewPostViewController
-//        newPostVC.hidesBottomBarWhenPushed = true
-//        navigationController?.pushViewController(newPostVC, animated: true)
         
         let photoSelectorVC = storyboard?.instantiateViewController(withIdentifier: "PhotoSelectorVC") as! PhotoSelectorViewController
         photoSelectorVC.hidesBottomBarWhenPushed = true
