@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var feedTableView: UITableView!
     
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +27,11 @@ class HomeViewController: UIViewController {
         
         feedTableView.rowHeight = UITableView.automaticDimension
         feedTableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "FeedCell")
+        
+        
+        //refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        feedTableView.addSubview(refreshControl) // not required when using UITableViewController
         
     }
     
@@ -57,6 +64,12 @@ class HomeViewController: UIViewController {
             UIBarButtonItem(customView: notiButton),
             UIBarButtonItem(customView: addFeedButton)
         ]
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        
+        // refresh 종료 시점
+        refreshControl.endRefreshing()
     }
     
     @objc func instaLabelButtonTapped() {

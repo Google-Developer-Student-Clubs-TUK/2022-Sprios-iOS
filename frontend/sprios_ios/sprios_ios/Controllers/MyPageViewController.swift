@@ -35,6 +35,7 @@ class MyPageViewController: UIViewController {
         setupNavigationBar()
         setupProfileImage()
         setupEditProfileButton()
+        
     }
     
     func setupProfileImage() {
