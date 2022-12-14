@@ -789,8 +789,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QhF-81-uTe"/>
                     <connections>
-                        <outlet property="emailField" destination="Gz9-zU-8yz" id="QyB-HD-qCX"/>
-                        <outlet property="titleLabel" destination="sMx-It-GcO" id="5MJ-A0-cdg"/>
+                        <outlet property="idField" destination="Gz9-zU-8yz" id="MSG-Hi-Nas"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkO-mv-DIz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -943,7 +942,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eK8-MP-fjI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5339.6946564885493" y="-751.4084507042254"/>
+            <point key="canvasLocation" x="6279" y="-751"/>
         </scene>
         <!--Add Username Controller-->
         <scene sceneID="cDZ-H5-t1S">
@@ -1001,6 +1000,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="OK"/>
                                         <connections>
+                                            <action selector="finishButton:" destination="8Fk-mf-d8n" eventType="touchUpInside" id="nzF-Vp-KjM"/>
                                             <action selector="nextButtonTapped:" destination="IRm-Li-xQ2" eventType="touchUpInside" id="RYI-cM-clQ"/>
                                         </connections>
                                     </button>
