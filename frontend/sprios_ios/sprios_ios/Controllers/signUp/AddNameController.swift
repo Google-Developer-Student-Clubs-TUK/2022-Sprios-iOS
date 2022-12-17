@@ -8,6 +8,8 @@
 import UIKit
 class AddNameController: UIViewController {
     
+    var user: User!
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
@@ -19,8 +21,12 @@ class AddNameController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         
-        let addUsernameVC = storyboard?.instantiateViewController(withIdentifier: "AddUsernameVC") as! AddUsernameController
-        navigationController?.pushViewController(addUsernameVC, animated: true)
+        let createPwdVC = storyboard?.instantiateViewController(withIdentifier: "CreatePwdVC") as! CreatePwdController
+        
+        user.name = nameField.text
+        createPwdVC.user = self.user
+        
+        navigationController?.pushViewController(createPwdVC, animated: true)
         
     }
 }

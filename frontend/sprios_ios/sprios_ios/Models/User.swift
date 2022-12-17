@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 struct User: Codable {
-    var id: String              // 아이디
-    var password: String        // 비밀번호
-    var name: String            // 이름
+    var account: String?             // 아이디
+    var password: String?        // 비밀번호
+    var name: String?            // 이름
     var email: String?           // 이메일
     var phone: String?           // 핸드폰
     var gender: String?          // 성별

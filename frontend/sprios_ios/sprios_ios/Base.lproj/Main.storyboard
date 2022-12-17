@@ -939,93 +939,13 @@
                             <constraint firstItem="dVB-Zj-Gof" firstAttribute="centerX" secondItem="0l9-9t-swa" secondAttribute="centerX" id="slk-86-Hmp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwdField" destination="jxq-y5-iij" id="LjE-QW-nr6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eK8-MP-fjI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6279" y="-751"/>
-        </scene>
-        <!--Add Username Controller-->
-        <scene sceneID="cDZ-H5-t1S">
-            <objects>
-                <viewController storyboardIdentifier="AddUsernameVC" id="8Fk-mf-d8n" customClass="AddUsernameController" customModule="sprios_ios" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WpN-zM-1wn">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UGJ-jb-nI0">
-                                <rect key="frame" x="33.666666666666657" y="63.999999999999993" width="325.66666666666674" height="87.333333333333314"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Change username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEQ-3i-cGU">
-                                        <rect key="frame" x="0.0" y="0.0" width="325.66666666666669" height="33.666666666666664"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IHD-JD-dk3">
-                                        <rect key="frame" x="0.0" y="48.666666666666671" width="325.66666666666669" height="38.666666666666671"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a username. You can change this at" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2d-fu-dLQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="325.66666666666669" height="19.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
-                                                <color key="textColor" systemColor="systemGrayColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="any time." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9C8-Rk-W1C">
-                                                <rect key="frame" x="0.0" y="19.333333333333329" width="325.66666666666669" height="19.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
-                                                <color key="textColor" systemColor="systemGrayColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="wEQ-3i-cGU" firstAttribute="centerX" secondItem="UGJ-jb-nI0" secondAttribute="centerX" id="c1F-qK-QQ7"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wcK-aO-e9V">
-                                <rect key="frame" x="33" y="181.33333333333334" width="320" height="110.00000000000003"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UfI-oY-srI">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="47.666666666666664"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <color key="tintColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWz-LR-Iy4">
-                                        <rect key="frame" x="0.0" y="62.666666666666657" width="320" height="47.333333333333343"/>
-                                        <color key="backgroundColor" name="AccentColor"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="OK"/>
-                                        <connections>
-                                            <action selector="finishButton:" destination="8Fk-mf-d8n" eventType="touchUpInside" id="nzF-Vp-KjM"/>
-                                            <action selector="nextButtonTapped:" destination="IRm-Li-xQ2" eventType="touchUpInside" id="RYI-cM-clQ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="Ufg-h1-lKt"/>
-                                    <constraint firstAttribute="width" constant="320" id="g2i-1d-vBW"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="psA-53-vb5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="UGJ-jb-nI0" firstAttribute="top" secondItem="psA-53-vb5" secondAttribute="top" constant="5" id="3T7-bc-tjc"/>
-                            <constraint firstItem="wcK-aO-e9V" firstAttribute="top" secondItem="UGJ-jb-nI0" secondAttribute="bottom" constant="30" id="KfF-62-a3Y"/>
-                            <constraint firstItem="psA-53-vb5" firstAttribute="trailing" secondItem="wcK-aO-e9V" secondAttribute="trailing" constant="40" id="bgB-bE-3y3"/>
-                            <constraint firstItem="UGJ-jb-nI0" firstAttribute="leading" secondItem="psA-53-vb5" secondAttribute="leading" constant="33.666666666666657" id="cdr-KA-Cz6"/>
-                            <constraint firstItem="wcK-aO-e9V" firstAttribute="centerX" secondItem="WpN-zM-1wn" secondAttribute="centerX" constant="-3.5" id="pT1-hA-OlA"/>
-                            <constraint firstItem="UGJ-jb-nI0" firstAttribute="centerX" secondItem="WpN-zM-1wn" secondAttribute="centerX" id="tk7-jx-Tmj"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yR1-5B-YU4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5474" y="-751"/>
+            <point key="canvasLocation" x="5421" y="-751"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HRJ-OW-XqY">

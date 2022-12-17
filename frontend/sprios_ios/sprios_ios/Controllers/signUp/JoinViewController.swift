@@ -8,6 +8,7 @@
 import UIKit
 class JoinViewController: UIViewController {
     
+    var userData : User = User()
     @IBOutlet weak var idField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
@@ -28,6 +29,10 @@ class JoinViewController: UIViewController {
                 print("중복 X")
                 DispatchQueue.main.async {
                     let addNameVC = self.storyboard?.instantiateViewController(withIdentifier: "AddNameVC") as! AddNameController
+                    
+                    self.userData.account = self.idField.text
+                    addNameVC.user = self.userData
+                    
                     self.navigationController?.pushViewController(addNameVC, animated: true)
                 }
                 

@@ -28,7 +28,6 @@
 		57EFA051293664EF00E46089 /* billabong.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA050293664EF00E46089 /* billabong.otf */; };
 		95A237A12939CB6F0041498C /* AddNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A237A02939CB6F0041498C /* AddNameController.swift */; };
 		95D6A42029438CDE0042645B /* CreatePwdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A41F29438CDE0042645B /* CreatePwdController.swift */; };
-		95D6A422294390660042645B /* AddUsernameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A421294390660042645B /* AddUsernameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +54,6 @@
 		57EFA050293664EF00E46089 /* billabong.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = billabong.otf; sourceTree = "<group>"; };
 		95A237A02939CB6F0041498C /* AddNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameController.swift; sourceTree = "<group>"; };
 		95D6A41F29438CDE0042645B /* CreatePwdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePwdController.swift; sourceTree = "<group>"; };
-		95D6A421294390660042645B /* AddUsernameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUsernameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +172,6 @@
 				57568A9F29349C9600D65507 /* JoinViewController.swift */,
 				95A237A02939CB6F0041498C /* AddNameController.swift */,
 				95D6A41F29438CDE0042645B /* CreatePwdController.swift */,
-				95D6A421294390660042645B /* AddUsernameController.swift */,
 			);
 			path = signUp;
 			sourceTree = "<group>";
@@ -255,7 +252,6 @@
 				57568AA22934A1D700D65507 /* HomeViewController.swift in Sources */,
 				57568A8D2934934100D65507 /* ViewController.swift in Sources */,
 				573261512938EDDD00C16D3A /* MyPageViewController.swift in Sources */,
-				95D6A422294390660042645B /* AddUsernameController.swift in Sources */,
 				57568A892934934100D65507 /* AppDelegate.swift in Sources */,
 				57568AA029349C9600D65507 /* JoinViewController.swift in Sources */,
 				57326A5429420779003B7343 /* UIImageView+Ext.swift in Sources */,
