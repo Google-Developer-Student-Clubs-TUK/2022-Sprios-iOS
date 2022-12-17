@@ -16,17 +16,32 @@ class JoinViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    
 
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         
-        getMethod(idField.text!)
-
-        let addNameVC = storyboard?.instantiateViewController(withIdentifier: "AddNameVC") as! AddNameController
-        navigationController?.pushViewController(addNameVC, animated: true)
+        // 탈출 클로저 + 동시성
+        
+        getMethod(idField.text!) { message in
+            if message == "회원 아이디 중복" {
+                print("중복")
+            } else {
+                print("중복 X")
+                DispatchQueue.main.async {
+                    let addNameVC = self.storyboard?.instantiateViewController(withIdentifier: "AddNameVC") as! AddNameController
+                    self.navigationController?.pushViewController(addNameVC, animated: true)
+                }
+                
+            }
+        }
     }
     
-    func getMethod(_ account : String) {
+    func getMethod(_ account : String, completion: @escaping (String) -> Void) {
+        
+        struct ResMessage: Codable {
+            var code: String
+            var message: String
+            var data: Bool
+        }
         
         guard let url = URL(string: "http://localhost:8080/api/members/duplicated/\(account)") else { return }
         
@@ -39,10 +54,6 @@ class JoinViewController: UIViewController {
                 print(error!)
                 return
             }
-            guard let safeData = data else {
-                print("Error: Did not receive data")
-                return
-            }
         
             guard let response = response as? HTTPURLResponse, (200 ..< 299) ~=
             response.statusCode else {
@@ -50,7 +61,18 @@ class JoinViewController: UIViewController {
                 return
             }
             
-            print(String(decoding: safeData, as: UTF8.self))
+            if let safeData = data {
+                do {
+                    let decoder = JSONDecoder()
+                    let decodedData = try decoder.decode(ResMessage.self, from: safeData)
+                    print(decodedData.message)
+                    
+                    completion(decodedData.message)
+                    
+                } catch {
+                    print("Err")
+                }
+            }
             
         }.resume()
     }
