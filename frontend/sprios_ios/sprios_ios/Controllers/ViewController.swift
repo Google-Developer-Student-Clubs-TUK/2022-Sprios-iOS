@@ -58,17 +58,26 @@ class ViewController: UIViewController {
         
         // 서버로 ID, PW 보내기
         UserManager.shared.checkingUser(account: id, password: passwd) { status in
-            
-            DispatchQueue.main.async {
-                if status == 200 {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-                    
-                    UserDefaults.standard.set(id, forKey: "user")
-                    
-                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
-                    
-                } else {
+            if status == 200 {
+                UserManager.shared.getUserData { statusCode, user in
+                    print(user)
+                    if statusCode == 200 {
+                        DispatchQueue.main.async {
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+                            
+                            UserDefaults.standard.set(id, forKey: "user")
+                            
+                            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                        }
+                    }
+                    else {
+                        print("error")
+                    }
+                }
+                
+            } else {
+                DispatchQueue.main.async {
                     let alert = UIAlertController(title: "로그인 실패", message: "아이디 또는 패스워드를 다시 확인하세요.", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "확인", style: .default))
                     self.present(alert, animated: true, completion: nil)

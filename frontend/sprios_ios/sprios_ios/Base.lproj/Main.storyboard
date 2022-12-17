@@ -531,7 +531,7 @@
                         <color key="tintColor" name="AccentColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="Sow-Pr-qMp">
-                        <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
+                        <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbo-Ps-Zvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -548,7 +548,9 @@
                         <viewLayoutGuide key="safeArea" id="O2l-O6-x5J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="play.rectangle" catalog="system" id="MC4-Vf-hgs"/>
+                    <tabBarItem key="tabBarItem" title="" id="MC4-Vf-hgs">
+                        <imageReference key="image" image="play.rectangle" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rex-sO-BDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -564,7 +566,9 @@
                         <viewLayoutGuide key="safeArea" id="LGq-Cl-fmI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="bag" catalog="system" id="Rxs-YR-rjB"/>
+                    <tabBarItem key="tabBarItem" title="" id="Rxs-YR-rjB">
+                        <imageReference key="image" image="bag" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDz-wa-Quv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -651,7 +655,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X66-rn-KE7">
                                 <rect key="frame" x="15" y="289" width="363" height="35"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="iSa-qe-Td9"/>
                                 </constraints>
@@ -1084,7 +1088,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xuy-ka-g1x" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="5zG-af-0Mn">
-                        <imageReference key="image" image="house" catalog="system" symbolScale="large"/>
+                        <imageReference key="image" image="house" catalog="system" symbolScale="medium"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1110,7 +1114,9 @@
         <scene sceneID="zU7-4J-a5P">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1JT-sp-CYp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="aBx-PV-fvl"/>
+                    <tabBarItem key="tabBarItem" title="" id="aBx-PV-fvl">
+                        <imageReference key="image" image="person" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PN8-tf-LND">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
