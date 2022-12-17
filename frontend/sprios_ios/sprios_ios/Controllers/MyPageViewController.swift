@@ -95,7 +95,8 @@ class MyPageViewController: UIViewController {
     }
     
     @objc func moreButtonTapped() {
-        
+        let logoutVC = storyboard?.instantiateViewController(withIdentifier: "LogoutVC") as! LogoutViewController
+        self.present(logoutVC, animated: true)
     }
     
     @objc func addFeedButtonTapped() {

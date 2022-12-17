@@ -730,6 +730,97 @@
             </objects>
             <point key="canvasLocation" x="4281.679389312977" y="1553.5211267605634"/>
         </scene>
+        <!--Logout View Controller-->
+        <scene sceneID="X6a-0g-E5Q">
+            <objects>
+                <viewController storyboardIdentifier="LogoutVC" id="3FR-G8-9fX" customClass="LogoutViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7l7-Ea-1bN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAf-Zh-ZYn">
+                                <rect key="frame" x="0.0" y="109" width="393" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="GqP-6X-CuX"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jj-ft-yK6" userLabel="로그아웃 View">
+                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMV-fW-QYv">
+                                        <rect key="frame" x="20" y="0.0" width="353" height="50"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="로그아웃">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logoutButtonTapped:" destination="3FR-G8-9fX" eventType="touchUpInside" id="be4-Y9-xW9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="BMV-fW-QYv" secondAttribute="trailing" constant="20" id="0tU-47-i7G"/>
+                                    <constraint firstAttribute="bottom" secondItem="BMV-fW-QYv" secondAttribute="bottom" id="bKd-I6-mmv"/>
+                                    <constraint firstAttribute="height" constant="50" id="nzp-fn-MO2"/>
+                                    <constraint firstItem="BMV-fW-QYv" firstAttribute="leading" secondItem="8Jj-ft-yK6" secondAttribute="leading" constant="20" id="wUn-B6-Ign"/>
+                                    <constraint firstItem="BMV-fW-QYv" firstAttribute="top" secondItem="8Jj-ft-yK6" secondAttribute="top" id="xQr-bx-RXJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efh-In-E4e" userLabel="회원탈퇴 View">
+                                <rect key="frame" x="0.0" y="110" width="393" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGE-30-N44">
+                                        <rect key="frame" x="20" y="0.0" width="353" height="50"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="회원탈퇴">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="withdrawalButtonTapped:" destination="3FR-G8-9fX" eventType="touchUpInside" id="PFN-Qh-TeQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WGE-30-N44" secondAttribute="trailing" constant="20" id="30Z-GT-XI8"/>
+                                    <constraint firstAttribute="height" constant="50" id="D27-5a-EXK"/>
+                                    <constraint firstAttribute="bottom" secondItem="WGE-30-N44" secondAttribute="bottom" id="RrB-UV-rgI"/>
+                                    <constraint firstItem="WGE-30-N44" firstAttribute="leading" secondItem="Efh-In-E4e" secondAttribute="leading" constant="20" id="YNk-vb-SAG"/>
+                                    <constraint firstItem="WGE-30-N44" firstAttribute="top" secondItem="Efh-In-E4e" secondAttribute="top" id="m6a-tA-Fpz"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2M-2s-ky8">
+                                <rect key="frame" x="0.0" y="160" width="393" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ZgK-MI-yDY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="701-W0-8we"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j2M-2s-ky8" firstAttribute="leading" secondItem="7l7-Ea-1bN" secondAttribute="leading" id="4jc-Ar-MNO"/>
+                            <constraint firstItem="701-W0-8we" firstAttribute="trailing" secondItem="8Jj-ft-yK6" secondAttribute="trailing" id="9aR-35-IVm"/>
+                            <constraint firstItem="IAf-Zh-ZYn" firstAttribute="leading" secondItem="701-W0-8we" secondAttribute="leading" id="EcG-kn-RQ4"/>
+                            <constraint firstAttribute="trailing" secondItem="j2M-2s-ky8" secondAttribute="trailing" id="GmJ-1t-U1j"/>
+                            <constraint firstItem="8Jj-ft-yK6" firstAttribute="leading" secondItem="701-W0-8we" secondAttribute="leading" id="QbN-0Z-Q0J"/>
+                            <constraint firstItem="8Jj-ft-yK6" firstAttribute="top" secondItem="701-W0-8we" secondAttribute="top" id="Xoi-HP-7nw"/>
+                            <constraint firstItem="IAf-Zh-ZYn" firstAttribute="top" secondItem="8Jj-ft-yK6" secondAttribute="bottom" id="cDF-0H-VNK"/>
+                            <constraint firstItem="701-W0-8we" firstAttribute="trailing" secondItem="IAf-Zh-ZYn" secondAttribute="trailing" id="eOa-ke-plZ"/>
+                            <constraint firstItem="j2M-2s-ky8" firstAttribute="top" secondItem="Efh-In-E4e" secondAttribute="bottom" id="f0x-qp-SaS"/>
+                            <constraint firstItem="701-W0-8we" firstAttribute="trailing" secondItem="Efh-In-E4e" secondAttribute="trailing" id="wuM-jQ-YR5"/>
+                            <constraint firstItem="Efh-In-E4e" firstAttribute="top" secondItem="IAf-Zh-ZYn" secondAttribute="bottom" id="wxx-Hf-z3K"/>
+                            <constraint firstItem="Efh-In-E4e" firstAttribute="leading" secondItem="701-W0-8we" secondAttribute="leading" id="xjd-KT-uin"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUS-hV-LEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5094" y="1557"/>
+        </scene>
         <!--Join View Controller-->
         <scene sceneID="FZc-Rj-zPL">
             <objects>
@@ -1143,6 +1234,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
