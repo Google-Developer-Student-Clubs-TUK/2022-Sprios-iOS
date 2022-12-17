@@ -21,7 +21,6 @@ class UserManager {
             return
         }
         
-        
         // 모델을 JSON data 형태로 변환
         guard let jsonData = try? JSONEncoder().encode(param) else {
             print("Error: Trying to convert model to JSON data")
@@ -34,7 +33,6 @@ class UserManager {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type") // 요청타입 JSON
         request.setValue("application/json", forHTTPHeaderField: "Accept") // 응답타입 JSON
         request.httpBody = jsonData
-        
         
         // 요청을 가지고 세션 작업시작
         URLSession.shared.dataTask(with: request) { data, response, error in

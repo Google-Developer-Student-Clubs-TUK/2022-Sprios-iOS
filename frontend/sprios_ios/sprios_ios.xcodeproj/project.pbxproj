@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57295110294D9F1900742E40 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5729510F294D9F1900742E40 /* LogoutViewController.swift */; };
 		573261512938EDDD00C16D3A /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573261502938EDDD00C16D3A /* MyPageViewController.swift */; };
 		57326A49293C8C58003B7343 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A48293C8C58003B7343 /* NewPostViewController.swift */; };
 		57326A4D293DE469003B7343 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A4C293DE469003B7343 /* User.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5729510F294D9F1900742E40 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		573261502938EDDD00C16D3A /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		57326A48293C8C58003B7343 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		57326A4C293DE469003B7343 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				57326A48293C8C58003B7343 /* NewPostViewController.swift */,
 				573261502938EDDD00C16D3A /* MyPageViewController.swift */,
 				57326A4E2940AB27003B7343 /* PhotoSelectorViewController.swift */,
+				5729510F294D9F1900742E40 /* LogoutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				95A237A12939CB6F0041498C /* AddNameController.swift in Sources */,
 				57326A49293C8C58003B7343 /* NewPostViewController.swift in Sources */,
 				57326A4D293DE469003B7343 /* User.swift in Sources */,
+				57295110294D9F1900742E40 /* LogoutViewController.swift in Sources */,
 				57326A582945C8C4003B7343 /* UserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
