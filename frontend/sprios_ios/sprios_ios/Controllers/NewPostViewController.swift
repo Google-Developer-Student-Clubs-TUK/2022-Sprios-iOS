@@ -39,7 +39,20 @@ class NewPostViewController: UIViewController {
     }
     
     @objc func rightBarButtonTapped() {
-        navigationController?.popToRootViewController(animated: true)
+        let profileImage = image.pngData()!
+        let content = postTextView.text
+        let post = Post(images: [profileImage], content: content)
+        
+        PostNetManager.shared.createPost(post: post) { statusCode in
+            if statusCode == 200 {
+                DispatchQueue.main.async {
+                    
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            } else {
+                print("게시물 생성 에러")
+            }
+        }
     }
     
 }

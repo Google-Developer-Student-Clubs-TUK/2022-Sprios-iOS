@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		57295110294D9F1900742E40 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5729510F294D9F1900742E40 /* LogoutViewController.swift */; };
 		572951132950807000742E40 /* UserNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572951122950807000742E40 /* UserNetManager.swift */; };
+		5729511529508D4900742E40 /* PostNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5729511429508D4900742E40 /* PostNetManager.swift */; };
+		572951172950C51000742E40 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572951162950C51000742E40 /* DetailPostViewController.swift */; };
 		573261512938EDDD00C16D3A /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573261502938EDDD00C16D3A /* MyPageViewController.swift */; };
 		57326A49293C8C58003B7343 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A48293C8C58003B7343 /* NewPostViewController.swift */; };
 		57326A4D293DE469003B7343 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A4C293DE469003B7343 /* User.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		5729510F294D9F1900742E40 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		572951122950807000742E40 /* UserNetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetManager.swift; sourceTree = "<group>"; };
+		5729511429508D4900742E40 /* PostNetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNetManager.swift; sourceTree = "<group>"; };
+		572951162950C51000742E40 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
 		573261502938EDDD00C16D3A /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		57326A48293C8C58003B7343 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		57326A4C293DE469003B7343 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				572951122950807000742E40 /* UserNetManager.swift */,
+				5729511429508D4900742E40 /* PostNetManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				573261502938EDDD00C16D3A /* MyPageViewController.swift */,
 				57326A4E2940AB27003B7343 /* PhotoSelectorViewController.swift */,
 				5729510F294D9F1900742E40 /* LogoutViewController.swift */,
+				572951162950C51000742E40 /* DetailPostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -272,8 +278,10 @@
 				57326A512940AD8C003B7343 /* PhotoCell.swift in Sources */,
 				57326A4F2940AB27003B7343 /* PhotoSelectorViewController.swift in Sources */,
 				57326A5629450464003B7343 /* Post.swift in Sources */,
+				572951172950C51000742E40 /* DetailPostViewController.swift in Sources */,
 				57568A8B2934934100D65507 /* SceneDelegate.swift in Sources */,
 				57E93E3B29378BE10005A55C /* FeedCell.swift in Sources */,
+				5729511529508D4900742E40 /* PostNetManager.swift in Sources */,
 				95D6A42029438CDE0042645B /* CreatePwdController.swift in Sources */,
 				572951132950807000742E40 /* UserNetManager.swift in Sources */,
 				95A237A12939CB6F0041498C /* AddNameController.swift in Sources */,

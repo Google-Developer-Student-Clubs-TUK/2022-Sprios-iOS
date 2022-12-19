@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
         
         feedTableView.rowHeight = UITableView.automaticDimension
         feedTableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "FeedCell")
-        
+        feedTableView.separatorStyle = .none
         
         //refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
@@ -67,9 +67,14 @@ class HomeViewController: UIViewController {
     }
     
     @objc func refresh(_ sender: AnyObject) {
+        // MARK: - 모든 사용자의 게시글을 가져오는 요청으로 수정
+        UserNetManager.shared.getUserData(completion: { status, user in
+            DispatchQueue.main.async {
+                // refresh 종료 시점
+                self.refreshControl.endRefreshing()
+            }
+        })
         
-        // refresh 종료 시점
-        refreshControl.endRefreshing()
     }
     
     @objc func instaLabelButtonTapped() {

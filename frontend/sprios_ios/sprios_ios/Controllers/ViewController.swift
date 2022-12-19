@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         let passwd = passwdTextField.text ?? ""
         
         // 서버로 ID, PW 보내기
-        UserNetManager.shared.checkingUser(account: id, password: passwd) { status in
+        UserNetManager.shared.checkUser(account: id, password: passwd) { status in
             if status == 200 {
                 UserNetManager.shared.getUserData { statusCode, user in
                     if statusCode == 200 {

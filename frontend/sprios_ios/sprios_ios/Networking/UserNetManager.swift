@@ -12,7 +12,7 @@ class UserNetManager {
     static let shared = UserNetManager()
     private init() {}
     
-    func checkingUser(account: String, password: String, completion: @escaping (Int) -> ()){
+    func checkUser(account: String, password: String, completion: @escaping (Int) -> ()){
         let param = ["account" : account, "password" : password]
         
         guard let url = URL(string: "http://localhost:8080/api/members/login") else {
@@ -90,7 +90,6 @@ class UserNetManager {
                 let decoder = JSONDecoder()
                 
                 let decodedData = try decoder.decode(User.self, from: safeData)
-                print(decodedData.profileImageUrl!)
                 completion(response.statusCode, decodedData)
             } catch {
                 print("Error")

@@ -734,6 +734,36 @@
             </objects>
             <point key="canvasLocation" x="4281.679389312977" y="1553.5211267605634"/>
         </scene>
+        <!--Detail Post View Controller-->
+        <scene sceneID="xtP-4S-37k">
+            <objects>
+                <viewController storyboardIdentifier="DetailPostVC" id="0fb-rV-lHk" customClass="DetailPostViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g3o-St-78l">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vqq-1e-1XB">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dp9-h6-aNr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vqq-1e-1XB" firstAttribute="top" secondItem="dp9-h6-aNr" secondAttribute="top" id="BTO-fR-7hy"/>
+                            <constraint firstItem="dp9-h6-aNr" firstAttribute="bottom" secondItem="vqq-1e-1XB" secondAttribute="bottom" id="LTA-xq-x5b"/>
+                            <constraint firstItem="vqq-1e-1XB" firstAttribute="leading" secondItem="dp9-h6-aNr" secondAttribute="leading" id="uEu-6y-yOg"/>
+                            <constraint firstItem="dp9-h6-aNr" firstAttribute="trailing" secondItem="vqq-1e-1XB" secondAttribute="trailing" id="zRg-qB-nIC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="vqq-1e-1XB" id="Zki-GN-bys"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPF-8s-nqG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4270" y="2239"/>
+        </scene>
         <!--Logout View Controller-->
         <scene sceneID="X6a-0g-E5Q">
             <objects>

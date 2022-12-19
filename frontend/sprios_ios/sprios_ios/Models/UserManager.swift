@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// LoginManager로 변경?
 class UserManager {
     
     static let shared = UserManager()

@@ -154,5 +154,10 @@ extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailPostVC = storyboard?.instantiateViewController(withIdentifier: "DetailPostVC") as! DetailPostViewController
+        detailPostVC.indexPath = indexPath
+        self.navigationController?.pushViewController(detailPostVC, animated: true)
+    }
     
 }

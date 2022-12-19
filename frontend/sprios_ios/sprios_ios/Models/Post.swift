@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct Post: Codable {
-    var postImage: Data
+    var images: [Data]?
     var content: String?
     
     // 유저 프로필 사진 + 유저 아이디
