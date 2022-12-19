@@ -28,7 +28,7 @@ class MyPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         profileImage.image = UIImage(named: "Instagram_logo_2022")
         
         setupCollectionView()
@@ -40,6 +40,37 @@ class MyPageViewController: UIViewController {
     
     func setupProfileImage() {
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
+        
+        // MARK: - 수정해야하는 부분 (리펙토링)
+        //var imageUrl = UserDefaults.standard.object(forKey: "imageUrl") as? String
+        let imageUrl = UserManager.shared.getLoginUser()?.profileImageUrl
+        
+        guard let urlString = imageUrl, let url = URL(string: urlString) else {
+            return
+        }
+        
+        // 오래걸리는 작업을 동시성 처리 (다른 쓰레드에서 일시킴)
+        DispatchQueue.global().async {
+            // url을 가지고 (이미지)데이터를 가져옴
+            // 동기적으로 처리됨(오래 걸림) -> 2번쓰레드에서 실행하도록 설정
+            guard let data = try? Data(contentsOf: url) else { return }
+            
+            // 오래 걸리는 작업이 일어나는 동안에 url이 바뀔 가능성 제거
+            // 빠른 스크롤 시 1번 url 요청 후 사진을 받아오려는 중에 cell이 재사용되어 2번 url 요청했는데 1번 url 요청 작업이 끝나 2번 사진이 아닌 1번 사진을 보여줄 수도 있기 때문에 url 비교하는 과정
+            guard urlString == url.absoluteString else { return }
+            
+            DispatchQueue.main.async {
+                self.profileImage.image = UIImage(data: data)
+            }
+        }
+        
+
+        let user = UserManager.shared.getLoginUser()
+        
+        username.text = user?.name
+        introduction.text = user?.introduce
+        
+        // MARK: - ---------------------------
     }
     
     func setupEditProfileButton() {
@@ -57,7 +88,7 @@ class MyPageViewController: UIViewController {
         
         collectionView.bounces = false
     }
-
+    
     func setupFlowLayout() {
         
         let collectionCellWidth = (UIScreen.main.bounds.width - CVCell1.spacingWidth * (CVCell1.cellColumns - 1)) / CVCell1.cellColumns
@@ -68,12 +99,16 @@ class MyPageViewController: UIViewController {
         flowLayout.minimumInteritemSpacing = CVCell1.spacingWidth // 아이템 사이 간격
         flowLayout.minimumLineSpacing = CVCell1.spacingWidth
     }
-
+    
     func setupNavigationBar() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "id", style: .plain, target: self, action: nil)
+        // MARK: - 수정 (리펙토링)
+        var account = UserManager.shared.getLoginUser()?.account
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: account, style: .plain, target: self, action: nil)
+        // MARK: - --------------------
+        
         let barButtonTextAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor(named: "DefaultLabelColor"),
-            .font: UIFont.systemFont(ofSize: 30, weight: .medium),
+            .font: UIFont.systemFont(ofSize: 25, weight: .medium),
         ]
         let leftButton = self.navigationItem.leftBarButtonItem
         leftButton?.setTitleTextAttributes(barButtonTextAttributes, for: .normal)

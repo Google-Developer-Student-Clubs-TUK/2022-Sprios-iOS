@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let loggedUser = UserDefaults.standard.string(forKey: "user") {
+        if let loggedUser = UserDefaults.standard.string(forKey: "account") {
             // instantiate the main tab bar controller and set it as root view controller
             // using the storyboard identifier we set earlier
             let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
