@@ -11,6 +11,7 @@
 		572951132950807000742E40 /* UserNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572951122950807000742E40 /* UserNetManager.swift */; };
 		5729511529508D4900742E40 /* PostNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5729511429508D4900742E40 /* PostNetManager.swift */; };
 		572951172950C51000742E40 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572951162950C51000742E40 /* DetailPostViewController.swift */; };
+		5729511929523F6400742E40 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5729511829523F6400742E40 /* ProfileEditViewController.swift */; };
 		573261512938EDDD00C16D3A /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573261502938EDDD00C16D3A /* MyPageViewController.swift */; };
 		57326A49293C8C58003B7343 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A48293C8C58003B7343 /* NewPostViewController.swift */; };
 		57326A4D293DE469003B7343 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A4C293DE469003B7343 /* User.swift */; };
@@ -39,6 +40,7 @@
 		572951122950807000742E40 /* UserNetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetManager.swift; sourceTree = "<group>"; };
 		5729511429508D4900742E40 /* PostNetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNetManager.swift; sourceTree = "<group>"; };
 		572951162950C51000742E40 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
+		5729511829523F6400742E40 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		573261502938EDDD00C16D3A /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		57326A48293C8C58003B7343 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		57326A4C293DE469003B7343 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				57326A4E2940AB27003B7343 /* PhotoSelectorViewController.swift */,
 				5729510F294D9F1900742E40 /* LogoutViewController.swift */,
 				572951162950C51000742E40 /* DetailPostViewController.swift */,
+				5729511829523F6400742E40 /* ProfileEditViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57568AA22934A1D700D65507 /* HomeViewController.swift in Sources */,
+				5729511929523F6400742E40 /* ProfileEditViewController.swift in Sources */,
 				57568A8D2934934100D65507 /* ViewController.swift in Sources */,
 				573261512938EDDD00C16D3A /* MyPageViewController.swift in Sources */,
 				57568A892934934100D65507 /* AppDelegate.swift in Sources */,

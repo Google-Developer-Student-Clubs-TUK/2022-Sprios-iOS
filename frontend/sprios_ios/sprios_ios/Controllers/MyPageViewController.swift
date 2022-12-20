@@ -23,13 +23,15 @@ class MyPageViewController: UIViewController {
     
     @IBOutlet weak var editProfileButton: UIButton!
     
+    var user: User!
+    
     // 컬렉션 뷰의 레이아웃을 담당하는 객체
     let flowLayout = UICollectionViewFlowLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileImage.image = UIImage(named: "Instagram_logo_2022")
+        user = UserManager.shared.getLoginUser()
         
         setupCollectionView()
         setupNavigationBar()
@@ -65,10 +67,10 @@ class MyPageViewController: UIViewController {
         }
         
 
-        let user = UserManager.shared.getLoginUser()
+        //let user = UserManager.shared.getLoginUser()
         
-        username.text = user?.name
-        introduction.text = user?.introduce
+        username.text = user.name
+        introduction.text = user.introduce
         
         // MARK: - ---------------------------
     }
@@ -102,8 +104,8 @@ class MyPageViewController: UIViewController {
     
     func setupNavigationBar() {
         // MARK: - 수정 (리펙토링)
-        var account = UserManager.shared.getLoginUser()?.account
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: account, style: .plain, target: self, action: nil)
+        //var account = UserManager.shared.getLoginUser()?.account
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: user.account, style: .plain, target: self, action: nil)
         // MARK: - --------------------
         
         let barButtonTextAttributes: [NSAttributedString.Key: Any] = [
@@ -138,6 +140,19 @@ class MyPageViewController: UIViewController {
         let photoSelectorVC = storyboard?.instantiateViewController(withIdentifier: "PhotoSelectorVC") as! PhotoSelectorViewController
         photoSelectorVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(photoSelectorVC, animated: false)
+    }
+    
+    
+    @IBAction func editProfileButtonTapped(_ sender: UIButton) {
+        
+        let profileEditVC = storyboard?.instantiateViewController(withIdentifier: "ProfileEditVC") as! ProfileEditViewController
+        
+        profileEditVC.image = profileImage.image
+        profileEditVC.name = user.name
+        profileEditVC.username = user.account
+        profileEditVC.introduce = user.introduce
+        
+        navigationController?.pushViewController(profileEditVC, animated: true)
     }
 }
 
