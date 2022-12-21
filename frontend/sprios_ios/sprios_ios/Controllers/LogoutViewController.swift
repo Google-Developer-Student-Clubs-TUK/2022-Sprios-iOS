@@ -21,9 +21,14 @@ class LogoutViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let loginNavController = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
             
-            UserManager.shared.unsetLoginUser()
+            UserNetManager.shared.logoutUser {
+                UserManager.shared.unsetLoginUser()
+                DispatchQueue.main.async {
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginNavController)
+                }
+            }
             
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginNavController)
+
         }))
         alert.addAction(UIAlertAction(title: "취소", style: .cancel))
         self.present(alert, animated: true, completion: nil)
