@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct User: Codable {
+    var id: Int?                    // 고유 식별자
     var account: String?            // 아이디
     var password: String?           // 비밀번호
     var name: String?               // 이름
@@ -18,4 +19,9 @@ struct User: Codable {
     var introduce: String?          // 소개글
     var profileImage: Data?         // 프로필 사진
     var profileImageUrl: String?    // 프로필 사진 URL
+    
+    enum CodingKeys: String, CodingKey {
+        case id, account, password, name, email, phone, gender, introduce, profileImage
+        case profileImageUrl = "imageUrl"
+    }
 }

@@ -46,7 +46,7 @@ class NewPostViewController: UIViewController {
 //        PostNetManager.shared.createPost(post: post) { statusCode in
 //            if statusCode == 200 {
 //                DispatchQueue.main.async {
-//                    
+//
 //                    self.navigationController?.popToRootViewController(animated: true)
 //                }
 //            } else {

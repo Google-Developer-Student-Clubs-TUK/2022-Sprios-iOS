@@ -9,24 +9,23 @@ import Foundation
 import UIKit
 
 
-
-// MARK: - Datum
-struct Post: Codable {
-    let content: String
-    let memberPostInfoResponse: MemberPostInfoResponse
-    let imageUrls: [String]
-    let likeCount: Int
-    let createdAt: [Int]
+struct Posts: Codable {
+    let posts: [Post]
+    
+    enum CodingKeys: String, CodingKey {
+        case posts = "data"
+    }
 }
 
-// MARK: - MemberPostInfoResponse
-struct MemberPostInfoResponse: Codable {
-    let id: Int
-    let account: String
-    let imageURL: String
-
+struct Post: Codable {
+    let content: String?
+    let user: User?
+    let imageUrls: [String]?
+    let likeCount: Int?
+    let createdAt: [Int]?
+    
     enum CodingKeys: String, CodingKey {
-        case id, account
-        case imageURL = "imageUrl"
+        case content, imageUrls, likeCount, createdAt
+        case user = "memberPostInfoResponse"
     }
 }
