@@ -24,6 +24,7 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var editProfileButton: UIButton!
     
     var user: User!
+    var postData: PostData?
     
     // 컬렉션 뷰의 레이아웃을 담당하는 객체
     let flowLayout = UICollectionViewFlowLayout()
@@ -31,16 +32,16 @@ class MyPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        user = UserManager.shared.getLoginUser()
+        user = UserDefaultsManager.shared.getLoginUser()
         
         setupCollectionView()
         setupNavigationBar()
-        setupProfileImage()
+        setupProfile()
         setupEditProfileButton()
-        
+        setupLoginUserPost()
     }
     
-    func setupProfileImage() {
+    func setupProfile() {
         print(#function)
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         
@@ -72,6 +73,15 @@ class MyPageViewController: UIViewController {
 
     }
     
+    func setupLoginUserPost() {
+        PostNetManager.shared.getLoginUserPosts { posts in
+            self.postData = posts
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
     func setupEditProfileButton() {
         editProfileButton.layer.cornerRadius = 5
         editProfileButton.backgroundColor = .systemGray3
@@ -100,10 +110,7 @@ class MyPageViewController: UIViewController {
     }
     
     func setupNavigationBar() {
-        // MARK: - 수정 (리펙토링)
-        //var account = UserManager.shared.getLoginUser()?.account
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: user.account, style: .plain, target: self, action: nil)
-        // MARK: - --------------------
         
         let barButtonTextAttributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor(named: "DefaultLabelColor"),
@@ -157,12 +164,12 @@ class MyPageViewController: UIViewController {
 extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return postData?.posts.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
-        cell.photo.image = UIImage(named: "Instagram_logo_2022")
+        cell.imageUrl = postData?.posts[indexPath.row].imageUrls?[0]
         return cell
     }
     

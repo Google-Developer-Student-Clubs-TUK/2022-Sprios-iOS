@@ -22,7 +22,7 @@ class LogoutViewController: UIViewController {
             let loginNavController = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
             
             UserNetManager.shared.logoutUser {
-                UserManager.shared.unsetLoginUser()
+                UserDefaultsManager.shared.unsetLoginUser()
                 DispatchQueue.main.async {
                     (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginNavController)
                 }

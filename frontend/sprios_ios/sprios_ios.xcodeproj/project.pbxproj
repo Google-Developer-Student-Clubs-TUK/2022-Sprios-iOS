@@ -21,7 +21,7 @@
 		57326A512940AD8C003B7343 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A502940AD8C003B7343 /* PhotoCell.swift */; };
 		57326A5429420779003B7343 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A5329420779003B7343 /* UIImageView+Ext.swift */; };
 		57326A5629450464003B7343 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A5529450464003B7343 /* Post.swift */; };
-		57326A582945C8C4003B7343 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A572945C8C4003B7343 /* UserManager.swift */; };
+		57326A582945C8C4003B7343 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326A572945C8C4003B7343 /* UserDefaultsManager.swift */; };
 		57568A892934934100D65507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568A882934934100D65507 /* AppDelegate.swift */; };
 		57568A8B2934934100D65507 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568A8A2934934100D65507 /* SceneDelegate.swift */; };
 		57568A8D2934934100D65507 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568A8C2934934100D65507 /* ViewController.swift */; };
@@ -52,7 +52,7 @@
 		57326A502940AD8C003B7343 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		57326A5329420779003B7343 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		57326A5529450464003B7343 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		57326A572945C8C4003B7343 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		57326A572945C8C4003B7343 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		57568A852934934100D65507 /* sprios_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sprios_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57568A882934934100D65507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57568A8A2934934100D65507 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +86,7 @@
 			children = (
 				572951122950807000742E40 /* UserNetManager.swift */,
 				5729511429508D4900742E40 /* PostNetManager.swift */,
+				5729511A295377C300742E40 /* MultipartFormDataRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -181,8 +182,7 @@
 			children = (
 				57326A4C293DE469003B7343 /* User.swift */,
 				57326A5529450464003B7343 /* Post.swift */,
-				57326A572945C8C4003B7343 /* UserManager.swift */,
-				5729511A295377C300742E40 /* MultipartFormDataRequest.swift */,
+				57326A572945C8C4003B7343 /* UserDefaultsManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 				57326A49293C8C58003B7343 /* NewPostViewController.swift in Sources */,
 				57326A4D293DE469003B7343 /* User.swift in Sources */,
 				57295110294D9F1900742E40 /* LogoutViewController.swift in Sources */,
-				57326A582945C8C4003B7343 /* UserManager.swift in Sources */,
+				57326A582945C8C4003B7343 /* UserDefaultsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

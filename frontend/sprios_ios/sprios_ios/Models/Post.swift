@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-struct Posts: Codable {
+struct PostData: Codable {
     let posts: [Post]
     
     enum CodingKeys: String, CodingKey {

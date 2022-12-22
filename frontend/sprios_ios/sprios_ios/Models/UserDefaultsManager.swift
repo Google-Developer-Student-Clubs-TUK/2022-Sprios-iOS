@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 // LoginManager로 변경?
-class UserManager {
+class UserDefaultsManager {
     
-    static let shared = UserManager()
+    static let shared = UserDefaultsManager()
     private init() {}
     
     let userDefaultKey = "user"

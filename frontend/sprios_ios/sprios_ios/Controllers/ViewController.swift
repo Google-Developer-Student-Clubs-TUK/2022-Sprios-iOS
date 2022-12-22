@@ -65,7 +65,7 @@ class ViewController: UIViewController {
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
                             
-                            UserManager.shared.setLoginUser(user: user)
+                            UserDefaultsManager.shared.setLoginUser(user: user)
                             
                             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
                         }
