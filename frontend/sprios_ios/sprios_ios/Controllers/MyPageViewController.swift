@@ -41,11 +41,13 @@ class MyPageViewController: UIViewController {
     }
     
     func setupProfileImage() {
+        print(#function)
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         
         // MARK: - 수정해야하는 부분 (리펙토링)
         //var imageUrl = UserDefaults.standard.object(forKey: "imageUrl") as? String
-        let imageUrl = UserManager.shared.getLoginUser()?.profileImageUrl
+        
+        let imageUrl = user.image?.imgUrl
         
         guard let urlString = imageUrl, let url = URL(string: urlString) else {
             return
@@ -63,16 +65,11 @@ class MyPageViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.profileImage.image = UIImage(data: data)
+                self.username.text = self.user.name
+                self.introduction.text = self.user.introduce
             }
         }
-        
 
-        //let user = UserManager.shared.getLoginUser()
-        
-        username.text = user.name
-        introduction.text = user.introduce
-        
-        // MARK: - ---------------------------
     }
     
     func setupEditProfileButton() {

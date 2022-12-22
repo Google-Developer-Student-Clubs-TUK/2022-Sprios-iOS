@@ -17,6 +17,7 @@ struct Posts: Codable {
     }
 }
 
+// 서버로부터 받는 Post 데이터 형식
 struct Post: Codable {
     let content: String?
     let user: User?
