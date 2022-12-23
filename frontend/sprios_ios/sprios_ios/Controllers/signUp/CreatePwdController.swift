@@ -33,7 +33,7 @@ class CreatePwdController: UIViewController {
     }
     func postMethod(_ param:User, completion: @escaping (Int) -> Void) {
         
-        guard let url = URL(string: "http://localhost:8080/api/members") else {
+        guard let url = URL(string: "http://3.35.24.16:8080/api/members") else {
             print("Error: cannot create URL")
             return
         }

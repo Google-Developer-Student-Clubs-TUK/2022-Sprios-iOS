@@ -19,7 +19,7 @@ class PostNetManager {
     func getLoginUserPosts(completion: @escaping (PostData)->()) {
         guard let user = UserDefaultsManager.shared.getLoginUser() else { return }
         
-        guard let url = URL(string: "http://localhost:8080/api/posts/writer?id=\(user.id!)") else {
+        guard let url = URL(string: "http://3.35.24.16:8080/api/posts/writer?id=\(user.id!)") else {
             print("Error: cannot create URL")
             return
         }

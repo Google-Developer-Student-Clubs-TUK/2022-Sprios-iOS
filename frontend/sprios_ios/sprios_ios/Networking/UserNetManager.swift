@@ -15,7 +15,7 @@ class UserNetManager {
     func loginUser(account: String, password: String, completion: @escaping (Int) -> ()){
         let param = ["account" : account, "password" : password]
         
-        guard let url = URL(string: "http://localhost:8080/api/members/login") else {
+        guard let url = URL(string: "http://3.35.24.16:8080/api/members/login") else {
             print("Error: cannot create URL")
             return
         }
@@ -57,7 +57,7 @@ class UserNetManager {
     }
     
     func logoutUser(completion: @escaping ()->()) {
-        guard let url = URL(string: "http://localhost:8080/api/members/logout") else {
+        guard let url = URL(string: "http://3.35.24.16:8080/api/members/logout") else {
             print("Error: cannot create URL")
             return
         }
@@ -88,11 +88,11 @@ class UserNetManager {
             completion()
         }.resume()
     }
-    
+
     
     func getUserData(completion: @escaping (Int, User) -> Void) {
         
-        guard let url = URL(string: "http://localhost:8080/api/members/info") else {
+        guard let url = URL(string: "http://3.35.24.16:8080/api/members/info") else {
             print("Error: cannot create URL")
             return
         }
