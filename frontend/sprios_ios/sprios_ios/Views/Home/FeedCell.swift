@@ -13,6 +13,7 @@ class FeedCell: UITableViewCell {
     
     @IBOutlet weak var account: UILabel!
     
+    @IBOutlet weak var accountBotLabel: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     
     @IBOutlet weak var content: UILabel!
@@ -20,6 +21,8 @@ class FeedCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        profileImage.layer.cornerRadius = profileImage.frame.width / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,5 +30,5 @@ class FeedCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

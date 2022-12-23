@@ -12,6 +12,8 @@ class DetailPostViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var indexPath: IndexPath!
+    var user: User!
+    var postData: PostData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +48,20 @@ class DetailPostViewController: UIViewController {
 
 extension DetailPostViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return postData.posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell
+        
+        var post = postData?.posts[indexPath.row]
+
+        cell.profileImage.loadImage(imageUrl: post?.user?.imageUrl!)
+        cell.postImage.loadImage(imageUrl: post?.imageUrls![0])
+        cell.account.text = post?.user?.account
+        cell.accountBotLabel.text = post?.user?.account
+        cell.content.text = post?.content
+        
         return cell
     }
     

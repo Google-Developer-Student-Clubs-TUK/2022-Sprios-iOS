@@ -99,13 +99,15 @@ class MyPageViewController: UIViewController {
         let leftButton = self.navigationItem.leftBarButtonItem
         leftButton?.setTitleTextAttributes(barButtonTextAttributes, for: .normal)
         
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium)
+        
         let moreButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        moreButton.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
+        moreButton.setImage(UIImage(systemName: "line.3.horizontal", withConfiguration: largeConfig), for: .normal)
         moreButton.tintColor = UIColor(named: "DefaultLabelColor")
         moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
         
         let addFeedButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        addFeedButton.setImage(UIImage(systemName: "plus.app"), for: .normal)
+        addFeedButton.setImage(UIImage(systemName: "plus.app", withConfiguration: largeConfig), for: .normal)
         addFeedButton.tintColor = UIColor(named: "DefaultLabelColor")
         addFeedButton.addTarget(self, action: #selector(addFeedButtonTapped), for: .touchUpInside)
         
@@ -156,6 +158,8 @@ extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailPostVC = storyboard?.instantiateViewController(withIdentifier: "DetailPostVC") as! DetailPostViewController
         detailPostVC.indexPath = indexPath
+        detailPostVC.user = user
+        detailPostVC.postData = postData
         self.navigationController?.pushViewController(detailPostVC, animated: true)
     }
     

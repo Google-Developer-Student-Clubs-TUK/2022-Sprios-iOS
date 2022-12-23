@@ -16,7 +16,9 @@ struct User: Codable {
     var phone: String?              // 핸드폰
     var gender: String?             // 성별
     var introduce: String?          // 소개글
-    var image: ProfileImage?               // 이미지데이터
+    var image: ProfileImage?        // 이미지데이터
+    
+    var imageUrl: String?    // 서버로부터 전달받는 유저 프로필 이미지
 }
 
 struct ProfileImage: Codable {

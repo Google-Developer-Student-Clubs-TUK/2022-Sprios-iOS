@@ -46,18 +46,21 @@ class HomeViewController: UIViewController {
         let leftButton = self.navigationItem.leftBarButtonItem
         leftButton?.setTitleTextAttributes(barButtonTextAttributes, for: .normal)
         
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium)
+        
         let addFeedButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        addFeedButton.setImage(UIImage(systemName: "plus.app"), for: .normal)
+        
+        addFeedButton.setImage(UIImage(systemName: "plus.app", withConfiguration: largeConfig), for: .normal)
         addFeedButton.tintColor = UIColor(named: "DefaultLabelColor")
         addFeedButton.addTarget(self, action: #selector(addFeedButtonTapped), for: .touchUpInside)
         
         let notiButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        notiButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        notiButton.setImage(UIImage(systemName: "heart", withConfiguration: largeConfig), for: .normal)
         notiButton.tintColor = UIColor(named: "DefaultLabelColor")
         notiButton.addTarget(self, action: #selector(notificationButtonTapped), for: .touchUpInside)
         
         let dmButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        dmButton.setImage(UIImage(systemName: "paperplane"), for: .normal)
+        dmButton.setImage(UIImage(systemName: "paperplane", withConfiguration: largeConfig), for: .normal)
         dmButton.tintColor = UIColor(named: "DefaultLabelColor")
         dmButton.addTarget(self, action: #selector(dmButtonTapped), for: .touchUpInside)
         
@@ -118,9 +121,10 @@ extension HomeViewController: UITableViewDataSource {
         
         var post = postData?.posts[indexPath.row]
         
-        cell.profileImage.loadImage(imageUrl: post?.user?.image?.imgUrl)
+        cell.profileImage.loadImage(imageUrl: post?.user?.imageUrl!)
         cell.postImage.loadImage(imageUrl: post?.imageUrls![0])
         cell.account.text = post?.user?.account
+        cell.accountBotLabel.text = post?.user?.account
         cell.content.text = post?.content
         
         return cell

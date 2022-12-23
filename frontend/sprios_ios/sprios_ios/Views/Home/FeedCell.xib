@@ -31,7 +31,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Guf-7B-vCd">
                                 <rect key="frame" x="0.0" y="0.0" width="81.333333333333329" height="25"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -164,7 +164,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="account" destination="bh6-Mu-6fx" id="FFn-cx-R9t"/>
+                <outlet property="account" destination="Guf-7B-vCd" id="3a2-Rs-WHw"/>
+                <outlet property="accountBotLabel" destination="bh6-Mu-6fx" id="ZR1-LK-PeO"/>
                 <outlet property="content" destination="u9U-dj-Zy2" id="BST-7t-bUe"/>
                 <outlet property="postImage" destination="in3-Tg-k1p" id="nqq-Pa-u34"/>
                 <outlet property="profileImage" destination="bxa-Da-hdD" id="JqZ-sz-Ejh"/>
