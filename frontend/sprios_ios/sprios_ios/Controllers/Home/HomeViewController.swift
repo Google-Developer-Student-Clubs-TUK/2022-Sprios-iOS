@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var feedTableView: UITableView!
     
     let refreshControl = UIRefreshControl()
+    var postData: PostData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupTableView()
         setupNavigationBar()
+        setupPosts()
     }
     
     func setupTableView() {
@@ -66,6 +68,15 @@ class HomeViewController: UIViewController {
         ]
     }
     
+    func setupPosts() {
+        PostNetManager.shared.getPosts { postData in
+            self.postData = postData
+            DispatchQueue.main.async {
+                self.feedTableView.reloadData()
+            }
+        }
+    }
+    
     @objc func refresh(_ sender: AnyObject) {
         // MARK: - 모든 사용자의 게시글을 가져오는 요청으로 수정
         UserNetManager.shared.getUserData(completion: { status, user in
@@ -99,11 +110,18 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return postData?.posts.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell
+        
+        var post = postData?.posts[indexPath.row]
+        
+        cell.profileImage.loadImage(imageUrl: post?.user?.image?.imgUrl)
+        cell.postImage.loadImage(imageUrl: post?.imageUrls![0])
+        cell.account.text = post?.user?.account
+        cell.content.text = post?.content
         
         return cell
     }

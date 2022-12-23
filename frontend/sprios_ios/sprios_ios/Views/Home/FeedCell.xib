@@ -35,7 +35,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzc-GM-EL5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzc-GM-EL5">
                                 <rect key="frame" x="0.0" y="25" width="81.333333333333329" height="25"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -163,6 +163,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="account" destination="bh6-Mu-6fx" id="FFn-cx-R9t"/>
+                <outlet property="content" destination="u9U-dj-Zy2" id="BST-7t-bUe"/>
+                <outlet property="postImage" destination="in3-Tg-k1p" id="nqq-Pa-u34"/>
+                <outlet property="profileImage" destination="bxa-Da-hdD" id="JqZ-sz-Ejh"/>
+            </connections>
             <point key="canvasLocation" x="174.80916030534351" y="176.40845070422537"/>
         </tableViewCell>
     </objects>

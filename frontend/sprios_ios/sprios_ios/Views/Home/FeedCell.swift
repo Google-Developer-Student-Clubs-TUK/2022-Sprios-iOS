@@ -9,6 +9,14 @@ import UIKit
 
 class FeedCell: UITableViewCell {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var account: UILabel!
+    
+    @IBOutlet weak var postImage: UIImageView!
+    
+    @IBOutlet weak var content: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
