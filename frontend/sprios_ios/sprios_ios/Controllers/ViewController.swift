@@ -57,16 +57,15 @@ class ViewController: UIViewController {
         let passwd = passwdTextField.text ?? ""
         
         // 서버로 ID, PW 보내기
-        UserManager.shared.checkingUser(account: id, password: passwd) { status in
+        UserNetManager.shared.checkingUser(account: id, password: passwd) { status in
             if status == 200 {
-                UserManager.shared.getUserData { statusCode, user in
-                    print(user)
+                UserNetManager.shared.getUserData { statusCode, user in
                     if statusCode == 200 {
                         DispatchQueue.main.async {
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
                             
-                            UserDefaults.standard.set(id, forKey: "user")
+                            UserManager.shared.setLoginUser(user: user)
                             
                             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
                         }
