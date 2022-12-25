@@ -133,6 +133,7 @@ extension HomeViewController: UITableViewDataSource {
         cell.account.text = post?.user?.account
         cell.accountBotLabel.text = post?.user?.account
         cell.content.text = post?.content
+        cell.dateCreated = post?.createdAt
         
         return cell
     }

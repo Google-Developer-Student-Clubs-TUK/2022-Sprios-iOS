@@ -23,7 +23,7 @@ struct Post: Codable {
     let user: User?
     let imageUrls: [String]?
     let likeCount: Int?
-    var createdAt: [Int]?
+    let createdAt: [Int]?
     
     enum CodingKeys: String, CodingKey {
         case content, imageUrls, likeCount, createdAt

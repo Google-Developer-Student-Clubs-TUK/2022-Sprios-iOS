@@ -20,7 +20,11 @@ class FeedCell: UITableViewCell {
     
     @IBOutlet weak var createdAt: UILabel!
     
-    var dateCreated: Date? 
+    var dateCreated: [Int]? {
+        didSet {
+            convertDateToString()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,4 +39,13 @@ class FeedCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func convertDateToString() {
+        guard let dates = dateCreated else { return }
+        let year = dates[0]
+        let month = dates[1]
+        let dayOfMonth = dates[2]
+        
+        let dateString = "\(year)년 \(month)월 \(dayOfMonth)일"
+        createdAt.text = dateString
+    }
 }
