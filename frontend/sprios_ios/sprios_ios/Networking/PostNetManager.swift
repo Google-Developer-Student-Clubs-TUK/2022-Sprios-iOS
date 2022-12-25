@@ -59,10 +59,10 @@ class PostNetManager {
         }.resume()
     }
     
-    func getPosts(completion: @escaping (PostData)->()) {
+    func getPosts(page: Int, completion: @escaping (PostData)->()) {
         
         // 전체 게시물 중 사이즈를 3씩 쪼개서 0번 페이지를 조회
-        guard let url = URL(string: "http://3.35.24.16:8080/api/posts/page/0?size=3") else {
+        guard let url = URL(string: "http://3.35.24.16:8080/api/posts/page/\(page)?size=2") else {
             print("Error: cannot create URL")
             return
         }

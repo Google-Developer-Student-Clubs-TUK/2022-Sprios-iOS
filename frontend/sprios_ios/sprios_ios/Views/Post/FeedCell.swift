@@ -18,6 +18,10 @@ class FeedCell: UITableViewCell {
     
     @IBOutlet weak var content: UILabel!
     
+    @IBOutlet weak var createdAt: UILabel!
+    
+    var dateCreated: Date? 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

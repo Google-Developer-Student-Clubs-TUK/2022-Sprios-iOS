@@ -24,6 +24,7 @@ class ProfileEditViewController: UIViewController {
 
         setupEditView()
         setupProfileImageView()
+        setupNavigationButton()
     }
     
     func setupEditView() {
@@ -42,17 +43,18 @@ class ProfileEditViewController: UIViewController {
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
     }
     
+    func setupNavigationButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(rightBarButtonTapped))
+    }
+    
+    @objc func rightBarButtonTapped() {
+        // 1. 사용자 이름 중복 검사
+        // 2. 중복 시 알림 창, 중복 아닐 시 변경
+    }
+    
     @objc func profileImageTapped() {
         print("tap")
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+

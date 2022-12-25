@@ -91,13 +91,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		57326A4A293C8E36003B7343 /* Home */ = {
+		57326A4A293C8E36003B7343 /* Post */ = {
 			isa = PBXGroup;
 			children = (
 				57E93E3929378BE10005A55C /* FeedCell.swift */,
 				57E93E3A29378BE10005A55C /* FeedCell.xib */,
+				57326A502940AD8C003B7343 /* PhotoCell.swift */,
 			);
-			path = Home;
+			path = Post;
 			sourceTree = "<group>";
 		};
 		57326A4B293C8E4F003B7343 /* Home */ = {
@@ -155,15 +156,11 @@
 		57568A9C29349C2800D65507 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				57EC28582957798F00AE187F /* SignIn-Out */,
+				57EC28572957796F00AE187F /* Profile */,
+				57EC28562957795700AE187F /* Post */,
 				57326A4B293C8E4F003B7343 /* Home */,
-				957835DE293920C300A8FC51 /* signUp */,
-				57568A8C2934934100D65507 /* ViewController.swift */,
-				57326A48293C8C58003B7343 /* NewPostViewController.swift */,
-				573261502938EDDD00C16D3A /* MyPageViewController.swift */,
-				57326A4E2940AB27003B7343 /* PhotoSelectorViewController.swift */,
-				5729510F294D9F1900742E40 /* LogoutViewController.swift */,
-				572951162950C51000742E40 /* DetailPostViewController.swift */,
-				5729511829523F6400742E40 /* ProfileEditViewController.swift */,
+				957835DE293920C300A8FC51 /* SignUp */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,8 +168,7 @@
 		57568A9D29349C3000D65507 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				57326A4A293C8E36003B7343 /* Home */,
-				57326A502940AD8C003B7343 /* PhotoCell.swift */,
+				57326A4A293C8E36003B7343 /* Post */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +183,34 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		57EC28562957795700AE187F /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				572951162950C51000742E40 /* DetailPostViewController.swift */,
+				57326A48293C8C58003B7343 /* NewPostViewController.swift */,
+				57326A4E2940AB27003B7343 /* PhotoSelectorViewController.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		57EC28572957796F00AE187F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				573261502938EDDD00C16D3A /* MyPageViewController.swift */,
+				5729511829523F6400742E40 /* ProfileEditViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		57EC28582957798F00AE187F /* SignIn-Out */ = {
+			isa = PBXGroup;
+			children = (
+				5729510F294D9F1900742E40 /* LogoutViewController.swift */,
+				57568A8C2934934100D65507 /* ViewController.swift */,
+			);
+			path = "SignIn-Out";
+			sourceTree = "<group>";
+		};
 		57EFA04F293664DD00E46089 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,14 +219,14 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
-		957835DE293920C300A8FC51 /* signUp */ = {
+		957835DE293920C300A8FC51 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				57568A9F29349C9600D65507 /* JoinViewController.swift */,
 				95A237A02939CB6F0041498C /* AddNameController.swift */,
 				95D6A41F29438CDE0042645B /* CreatePwdController.swift */,
 			);
-			path = signUp;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

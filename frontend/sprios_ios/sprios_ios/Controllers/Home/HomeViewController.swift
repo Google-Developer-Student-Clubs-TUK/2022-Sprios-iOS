@@ -12,7 +12,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var feedTableView: UITableView!
     
     let refreshControl = UIRefreshControl()
+    let spinner = UIActivityIndicatorView(style: .medium)
     var postData: PostData?
+    var pageCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +23,10 @@ class HomeViewController: UIViewController {
         setupTableView()
         setupNavigationBar()
         setupPosts()
+        
     }
     
     func setupTableView() {
-        feedTableView.delegate = self
         feedTableView.dataSource = self
         
         feedTableView.rowHeight = UITableView.automaticDimension
@@ -34,6 +36,10 @@ class HomeViewController: UIViewController {
         //refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         feedTableView.addSubview(refreshControl) // not required when using UITableViewController
+        
+        spinner.color = UIColor.darkGray
+        spinner.hidesWhenStopped = true
+        feedTableView.tableFooterView = spinner
         
     }
     
@@ -72,7 +78,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupPosts() {
-        PostNetManager.shared.getPosts { postData in
+        PostNetManager.shared.getPosts(page: 0) { postData in
             self.postData = postData
             DispatchQueue.main.async {
                 self.feedTableView.reloadData()
@@ -82,12 +88,13 @@ class HomeViewController: UIViewController {
     
     @objc func refresh(_ sender: AnyObject) {
         // MARK: - 모든 사용자의 게시글을 가져오는 요청으로 수정
-        UserNetManager.shared.getUserData(completion: { status, user in
+        PostNetManager.shared.getPosts(page: 0) { postData in
+            self.postData = postData
             DispatchQueue.main.async {
-                // refresh 종료 시점
                 self.refreshControl.endRefreshing()
+                self.feedTableView.reloadData()
             }
-        })
+        }
         
     }
     
@@ -130,10 +137,29 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
     
-    
-}
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
+            spinner.startAnimating()
+        }
 
-extension HomeViewController: UITableViewDelegate {
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
+           
+            pageCount += 1
+            PostNetManager.shared.getPosts(page: pageCount) { postData in
+                for post in postData.posts {
+                    self.postData?.posts.append(post)
+                }
+
+                DispatchQueue.main.async {
+                    self.feedTableView.reloadData()
+                    self.spinner.stopAnimating()
+                }
+            }
+        }
+    }
     
 }
 

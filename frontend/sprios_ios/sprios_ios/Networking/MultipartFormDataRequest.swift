@@ -20,6 +20,9 @@ struct MultipartFormDataRequest {
         httpBody.append(textFormField(named: name, value: value))
     }
 
+    // 현재 Content-Type : text/plain
+    // 1. Content-Type을 application/json;charset=UTF-8로 바꿔보기
+    // 2. 1번 안되면 기존 json 네트워킹 방식으로 바디에 추가해보기
     private func textFormField(named name: String, value: String) -> String {
         var fieldString = "--\(boundary)\r\n"
         fieldString += "Content-Disposition: form-data; name=\"\(name)\"\r\n"

@@ -10,7 +10,7 @@ import UIKit
 
 
 struct PostData: Codable {
-    let posts: [Post]
+    var posts: [Post]
     
     enum CodingKeys: String, CodingKey {
         case posts = "data"
@@ -23,7 +23,7 @@ struct Post: Codable {
     let user: User?
     let imageUrls: [String]?
     let likeCount: Int?
-    let createdAt: [Int]?
+    var createdAt: [Int]?
     
     enum CodingKeys: String, CodingKey {
         case content, imageUrls, likeCount, createdAt
