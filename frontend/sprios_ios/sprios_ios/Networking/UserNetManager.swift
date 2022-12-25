@@ -132,5 +132,46 @@ class UserNetManager {
         }.resume()
     }
     
+    func checkingUser(account: String, completion: @escaping (String)->()) {
+        
+        guard let url = URL(string: "http://3.35.24.16:8080/api/members/duplicated/\(account)") else {
+            print("Error: cannot create URL")
+            return
+        }
+        
+        // URL요청 생성
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        // 요청을 가지고 세션 작업시작
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            // 에러가 없어야 넘어감
+            guard error == nil else {
+                print("Error: error calling POST")
+                print(error!)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else { return }
+            
+            // 옵셔널 바인딩
+            guard let safeData = data else {
+                print("Error: Did not receive data")
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let decodedData = try decoder.decode(ResMessage.self, from: safeData)
+                print(decodedData.message)
+                
+                completion(decodedData.message)
+                
+            } catch {
+                print("Err")
+            }
+            
+        }.resume()
+    }
 }
 

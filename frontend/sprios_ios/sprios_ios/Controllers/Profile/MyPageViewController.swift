@@ -28,6 +28,7 @@ class MyPageViewController: UIViewController {
     
     // 컬렉션 뷰의 레이아웃을 담당하는 객체
     let flowLayout = UICollectionViewFlowLayout()
+    var isUpdated = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,13 @@ class MyPageViewController: UIViewController {
         setupProfile()
         setupEditProfileButton()
         setupLoginUserPost()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if isUpdated {
+            setupProfile()
+            isUpdated = false
+        }
     }
     
     func setupProfile() {

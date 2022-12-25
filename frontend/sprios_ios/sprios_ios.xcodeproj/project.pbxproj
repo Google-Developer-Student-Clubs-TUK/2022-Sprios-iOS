@@ -32,6 +32,8 @@
 		57568AA22934A1D700D65507 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57568AA12934A1D700D65507 /* HomeViewController.swift */; };
 		57E93E3B29378BE10005A55C /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E93E3929378BE10005A55C /* FeedCell.swift */; };
 		57E93E3C29378BE10005A55C /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E93E3A29378BE10005A55C /* FeedCell.xib */; };
+		57EC285A2958DA7100AE187F /* ProfileImgSelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC28592958DA7100AE187F /* ProfileImgSelViewController.swift */; };
+		57EC285C2959096500AE187F /* ResMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC285B2959096500AE187F /* ResMessage.swift */; };
 		57EFA051293664EF00E46089 /* billabong.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA050293664EF00E46089 /* billabong.otf */; };
 		95A237A12939CB6F0041498C /* AddNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A237A02939CB6F0041498C /* AddNameController.swift */; };
 		95D6A42029438CDE0042645B /* CreatePwdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A41F29438CDE0042645B /* CreatePwdController.swift */; };
@@ -65,6 +67,8 @@
 		57568AA12934A1D700D65507 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		57E93E3929378BE10005A55C /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		57E93E3A29378BE10005A55C /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		57EC28592958DA7100AE187F /* ProfileImgSelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImgSelViewController.swift; sourceTree = "<group>"; };
+		57EC285B2959096500AE187F /* ResMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResMessage.swift; sourceTree = "<group>"; };
 		57EFA050293664EF00E46089 /* billabong.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = billabong.otf; sourceTree = "<group>"; };
 		95A237A02939CB6F0041498C /* AddNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameController.swift; sourceTree = "<group>"; };
 		95D6A41F29438CDE0042645B /* CreatePwdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePwdController.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 				57326A4C293DE469003B7343 /* User.swift */,
 				57326A5529450464003B7343 /* Post.swift */,
 				57326A572945C8C4003B7343 /* UserDefaultsManager.swift */,
+				57EC285B2959096500AE187F /* ResMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			children = (
 				573261502938EDDD00C16D3A /* MyPageViewController.swift */,
 				5729511829523F6400742E40 /* ProfileEditViewController.swift */,
+				57EC28592958DA7100AE187F /* ProfileImgSelViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 				57568A892934934100D65507 /* AppDelegate.swift in Sources */,
 				57568AA029349C9600D65507 /* JoinViewController.swift in Sources */,
 				57326A5429420779003B7343 /* UIImageView+Ext.swift in Sources */,
+				57EC285C2959096500AE187F /* ResMessage.swift in Sources */,
 				57326A512940AD8C003B7343 /* PhotoCell.swift in Sources */,
 				57326A4F2940AB27003B7343 /* PhotoSelectorViewController.swift in Sources */,
 				57326A5629450464003B7343 /* Post.swift in Sources */,
@@ -325,6 +332,7 @@
 				57326A4D293DE469003B7343 /* User.swift in Sources */,
 				57295110294D9F1900742E40 /* LogoutViewController.swift in Sources */,
 				57326A582945C8C4003B7343 /* UserDefaultsManager.swift in Sources */,
+				57EC285A2958DA7100AE187F /* ProfileImgSelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

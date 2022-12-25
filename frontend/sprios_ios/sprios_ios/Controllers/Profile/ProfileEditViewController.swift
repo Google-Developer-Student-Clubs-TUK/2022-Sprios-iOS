@@ -14,9 +14,9 @@ class ProfileEditViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var introduceTextField: UITextField!
     
-    var image: UIImage!
+    var image: UIImage?
     var name: String?
-    var username: String!
+    var username: String?
     var introduce: String?
     
     override func viewDidLoad() {
@@ -25,6 +25,10 @@ class ProfileEditViewController: UIViewController {
         setupEditView()
         setupProfileImageView()
         setupNavigationButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        profileImage.image = image
     }
     
     func setupEditView() {
@@ -48,12 +52,37 @@ class ProfileEditViewController: UIViewController {
     }
     
     @objc func rightBarButtonTapped() {
-        // 1. 사용자 이름 중복 검사
-        // 2. 중복 시 알림 창, 중복 아닐 시 변경
+        let index = self.navigationController!.viewControllers.count - 2
+        let vc = self.navigationController?.viewControllers[index] as! MyPageViewController
+        
+        guard let account = usernameTextField.text else { return }
+        
+        let user = UserDefaultsManager.shared.getLoginUser()
+        
+        if user?.account != usernameTextField.text {
+            UserNetManager.shared.checkingUser(account: account) { message in
+                DispatchQueue.main.async {
+                    if message == "회원 아이디 중복" {
+                        let alert = UIAlertController(title: "사용자 이름 중복", message: "설정하신 사용자 이름은 사용하실 수 없습니다.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "확인", style: .default))
+                        self.present(alert, animated: true)
+                        return
+                    }
+                }
+            }
+        }
+        
+        vc.isUpdated = true
+        
+        // 프로필 업데이트 통신 > 유저정보 가져오기 > UserDefault 재설정
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func profileImageTapped() {
-        print("tap")
+        let profileImgEditVC = storyboard?.instantiateViewController(withIdentifier: "ProfileImgSelVC") as! ProfileImgSelViewController
+        
+        navigationController?.pushViewController(profileImgEditVC, animated: true)
     }
 
 }

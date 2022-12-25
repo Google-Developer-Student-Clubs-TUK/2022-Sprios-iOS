@@ -42,12 +42,6 @@ class JoinViewController: UIViewController {
     
     func getMethod(_ account : String, completion: @escaping (String) -> Void) {
         
-        struct ResMessage: Codable {
-            var code: String
-            var message: String
-            var data: Bool
-        }
-        
         guard let url = URL(string: "http://3.35.24.16:8080/api/members/duplicated/\(account)") else { return }
         
         var request = URLRequest(url: url)

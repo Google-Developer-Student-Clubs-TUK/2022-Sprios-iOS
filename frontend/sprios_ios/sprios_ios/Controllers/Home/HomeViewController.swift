@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupTableView() {
+        feedTableView.delegate = self
         feedTableView.dataSource = self
         
         feedTableView.rowHeight = UITableView.automaticDimension
@@ -44,13 +45,20 @@ class HomeViewController: UIViewController {
     }
     
     func setupNavigationBar() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "instagram", style: .plain, target: self, action: #selector(instaLabelButtonTapped))
-        let barButtonTextAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor(named: "DefaultLabelColor"),
-            .font: UIFont(name: "Billabong", size: 35)!
-        ]
-        let leftButton = self.navigationItem.leftBarButtonItem
-        leftButton?.setTitleTextAttributes(barButtonTextAttributes, for: .normal)
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "instagram", style: .plain, target: self, action: #selector(instaLabelButtonTapped))
+//        let barButtonTextAttributes: [NSAttributedString.Key: Any] = [
+//            .foregroundColor: UIColor(named: "DefaultLabelColor"),
+//            .font: UIFont(name: "Billabong", size: 35)!
+//        ]
+//        let leftButton = self.navigationItem.leftBarButtonItem
+//        leftButton?.setTitleTextAttributes(barButtonTextAttributes, for: .normal)
+        let logo = UIImage(named: "logo")
+        let tintImage = logo?.withRenderingMode(.alwaysTemplate)
+        let imageView = UIImageView(image: tintImage)
+        imageView.tintColor = .label
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: imageView)
+        
         
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium)
         
@@ -142,12 +150,11 @@ extension HomeViewController: UITableViewDataSource {
         if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
             spinner.startAnimating()
         }
-
     }
     
+
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {
-           
             pageCount += 1
             PostNetManager.shared.getPosts(page: pageCount) { postData in
                 for post in postData.posts {
@@ -164,3 +171,6 @@ extension HomeViewController: UITableViewDataSource {
     
 }
 
+extension HomeViewController: UITableViewDelegate {
+    
+}

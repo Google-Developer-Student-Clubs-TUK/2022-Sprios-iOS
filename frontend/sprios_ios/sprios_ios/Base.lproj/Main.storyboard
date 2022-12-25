@@ -1008,7 +1008,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sc8-09-Jci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5095" y="2245"/>
+            <point key="canvasLocation" x="5054" y="1554"/>
+        </scene>
+        <!--Profile Img Sel View Controller-->
+        <scene sceneID="H6V-Cb-oK6">
+            <objects>
+                <viewController storyboardIdentifier="ProfileImgSelVC" id="WBA-8L-2Tg" customClass="ProfileImgSelViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UIH-CW-2Ab">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MzA-P2-Bgt">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="way-kG-PV8">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="FJ2-XZ-9ga" customClass="PhotoCell" customModule="sprios_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iL1-qO-FLC">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TmI-lQ-MKg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TmI-lQ-MKg" firstAttribute="leading" secondItem="iL1-qO-FLC" secondAttribute="leading" id="8CB-eA-K6o"/>
+                                                <constraint firstAttribute="bottom" secondItem="TmI-lQ-MKg" secondAttribute="bottom" id="BaV-7z-fFt"/>
+                                                <constraint firstAttribute="trailing" secondItem="TmI-lQ-MKg" secondAttribute="trailing" id="q7S-YH-XHG"/>
+                                                <constraint firstItem="TmI-lQ-MKg" firstAttribute="top" secondItem="iL1-qO-FLC" secondAttribute="top" id="tHy-kd-GOa"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="photo" destination="TmI-lQ-MKg" id="JfX-3Q-uGZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZSe-cj-PfF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MzA-P2-Bgt" firstAttribute="top" secondItem="ZSe-cj-PfF" secondAttribute="top" id="8bx-gm-FBI"/>
+                            <constraint firstItem="MzA-P2-Bgt" firstAttribute="leading" secondItem="ZSe-cj-PfF" secondAttribute="leading" id="KnG-gd-L5M"/>
+                            <constraint firstItem="ZSe-cj-PfF" firstAttribute="bottom" secondItem="MzA-P2-Bgt" secondAttribute="bottom" id="dPE-CD-gRT"/>
+                            <constraint firstItem="ZSe-cj-PfF" firstAttribute="trailing" secondItem="MzA-P2-Bgt" secondAttribute="trailing" id="xgV-qj-N43"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="c0s-lW-Bfy"/>
+                    <connections>
+                        <outlet property="collectionView" destination="MzA-P2-Bgt" id="ncU-p3-EMa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lAk-G0-pcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5879" y="1554"/>
         </scene>
         <!--Logout View Controller-->
         <scene sceneID="X6a-0g-E5Q">
@@ -1099,7 +1160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUS-hV-LEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5094" y="1557"/>
+            <point key="canvasLocation" x="5053" y="2239"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="FZc-Rj-zPL">
