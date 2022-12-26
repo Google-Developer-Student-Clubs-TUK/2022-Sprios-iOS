@@ -39,20 +39,32 @@ class NewPostViewController: UIViewController {
     }
     
     @objc func rightBarButtonTapped() {
-        let profileImage = image.pngData()!
+        print(#function)
+        let profileImage = image.jpegData(compressionQuality: 1)!
         let content = postTextView.text
+        
+        let newPost = NewPost(content: content, images: [profileImage])
+        uploadNewPost(with: newPost) { bool in
+            if bool {
+                DispatchQueue.main.async {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            } else {
+                print("실패")
+            }
+        }
         //let post = Post(images: [profileImage], content: content)
         
-//        PostNetManager.shared.createPost(post: post) { statusCode in
-//            if statusCode == 200 {
-//                DispatchQueue.main.async {
-//
-//                    self.navigationController?.popToRootViewController(animated: true)
-//                }
-//            } else {
-//                print("게시물 생성 에러")
-//            }
-//        }
+        //        PostNetManager.shared.createPost(post: post) { statusCode in
+        //            if statusCode == 200 {
+        //                DispatchQueue.main.async {
+        //
+        //                    self.navigationController?.popToRootViewController(animated: true)
+        //                }
+        //            } else {
+        //                print("게시물 생성 에러")
+        //            }
+        //        }
     }
     
 }

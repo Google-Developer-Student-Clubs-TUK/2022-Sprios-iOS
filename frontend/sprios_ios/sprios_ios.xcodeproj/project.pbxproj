@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		499842979D136ADB6FE07A0F /* Pods_sprios_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E109258E31C761389E221B9 /* Pods_sprios_ios.framework */; };
 		57295110294D9F1900742E40 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5729510F294D9F1900742E40 /* LogoutViewController.swift */; };
 		572951132950807000742E40 /* UserNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572951122950807000742E40 /* UserNetManager.swift */; };
 		5729511529508D4900742E40 /* PostNetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5729511429508D4900742E40 /* PostNetManager.swift */; };
@@ -34,12 +35,14 @@
 		57E93E3C29378BE10005A55C /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E93E3A29378BE10005A55C /* FeedCell.xib */; };
 		57EC285A2958DA7100AE187F /* ProfileImgSelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC28592958DA7100AE187F /* ProfileImgSelViewController.swift */; };
 		57EC285C2959096500AE187F /* ResMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC285B2959096500AE187F /* ResMessage.swift */; };
+		57EC285E2959BB7E00AE187F /* AlamofireMultipart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EC285D2959BB7E00AE187F /* AlamofireMultipart.swift */; };
 		57EFA051293664EF00E46089 /* billabong.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57EFA050293664EF00E46089 /* billabong.otf */; };
 		95A237A12939CB6F0041498C /* AddNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A237A02939CB6F0041498C /* AddNameController.swift */; };
 		95D6A42029438CDE0042645B /* CreatePwdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6A41F29438CDE0042645B /* CreatePwdController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		022C883B0196EF410011BC94 /* Pods-sprios_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sprios_ios.debug.xcconfig"; path = "Target Support Files/Pods-sprios_ios/Pods-sprios_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		5729510F294D9F1900742E40 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		572951122950807000742E40 /* UserNetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetManager.swift; sourceTree = "<group>"; };
 		5729511429508D4900742E40 /* PostNetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNetManager.swift; sourceTree = "<group>"; };
@@ -69,9 +72,12 @@
 		57E93E3A29378BE10005A55C /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		57EC28592958DA7100AE187F /* ProfileImgSelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImgSelViewController.swift; sourceTree = "<group>"; };
 		57EC285B2959096500AE187F /* ResMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResMessage.swift; sourceTree = "<group>"; };
+		57EC285D2959BB7E00AE187F /* AlamofireMultipart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireMultipart.swift; sourceTree = "<group>"; };
 		57EFA050293664EF00E46089 /* billabong.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = billabong.otf; sourceTree = "<group>"; };
+		5E109258E31C761389E221B9 /* Pods_sprios_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sprios_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A237A02939CB6F0041498C /* AddNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameController.swift; sourceTree = "<group>"; };
 		95D6A41F29438CDE0042645B /* CreatePwdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePwdController.swift; sourceTree = "<group>"; };
+		D1D7A1D343EF4E63F70BC9E4 /* Pods-sprios_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sprios_ios.release.xcconfig"; path = "Target Support Files/Pods-sprios_ios/Pods-sprios_ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499842979D136ADB6FE07A0F /* Pods_sprios_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +98,7 @@
 				572951122950807000742E40 /* UserNetManager.swift */,
 				5729511429508D4900742E40 /* PostNetManager.swift */,
 				5729511A295377C300742E40 /* MultipartFormDataRequest.swift */,
+				57EC285D2959BB7E00AE187F /* AlamofireMultipart.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -127,6 +135,8 @@
 			children = (
 				57568A872934934100D65507 /* sprios_ios */,
 				57568A862934934100D65507 /* Products */,
+				B4C39DAADC922AC7A38FBDB9 /* Pods */,
+				C5C4A9BACD7FDC5C23210080 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +245,23 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		B4C39DAADC922AC7A38FBDB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				022C883B0196EF410011BC94 /* Pods-sprios_ios.debug.xcconfig */,
+				D1D7A1D343EF4E63F70BC9E4 /* Pods-sprios_ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C5C4A9BACD7FDC5C23210080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E109258E31C761389E221B9 /* Pods_sprios_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57568A992934934200D65507 /* Build configuration list for PBXNativeTarget "sprios_ios" */;
 			buildPhases = (
+				0FFB9B2633D43341D87AE10D /* [CP] Check Pods Manifest.lock */,
 				57568A812934934100D65507 /* Sources */,
 				57568A822934934100D65507 /* Frameworks */,
 				57568A832934934100D65507 /* Resources */,
+				E0047F23039638FD9792DF36 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +332,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0FFB9B2633D43341D87AE10D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sprios_ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0047F23039638FD9792DF36 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sprios_ios/Pods-sprios_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sprios_ios/Pods-sprios_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sprios_ios/Pods-sprios_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		57568A812934934100D65507 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -319,6 +390,7 @@
 				57EC285C2959096500AE187F /* ResMessage.swift in Sources */,
 				57326A512940AD8C003B7343 /* PhotoCell.swift in Sources */,
 				57326A4F2940AB27003B7343 /* PhotoSelectorViewController.swift in Sources */,
+				57EC285E2959BB7E00AE187F /* AlamofireMultipart.swift in Sources */,
 				57326A5629450464003B7343 /* Post.swift in Sources */,
 				572951172950C51000742E40 /* DetailPostViewController.swift in Sources */,
 				5729511D295377E500742E40 /* NSMutableData+Ext.swift in Sources */,
@@ -474,6 +546,7 @@
 		};
 		57568A9A2934934200D65507 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 022C883B0196EF410011BC94 /* Pods-sprios_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -504,6 +577,7 @@
 		};
 		57568A9B2934934200D65507 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1D7A1D343EF4E63F70BC9E4 /* Pods-sprios_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
