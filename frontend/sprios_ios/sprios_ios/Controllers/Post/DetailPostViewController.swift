@@ -54,7 +54,7 @@ extension DetailPostViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell
         
-        var post = postData?.posts[indexPath.row]
+        let post = postData?.posts[indexPath.row]
 
         cell.profileImage.loadImage(imageUrl: post?.user?.imageUrl!)
         cell.postImage.loadImage(imageUrl: post?.imageUrls![0])

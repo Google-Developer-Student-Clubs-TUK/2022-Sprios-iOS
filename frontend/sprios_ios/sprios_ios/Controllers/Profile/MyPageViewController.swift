@@ -36,7 +36,8 @@ class MyPageViewController: UIViewController {
         user = UserDefaultsManager.shared.getLoginUser()
         
         setupCollectionView()
-        setupNavigationBar()
+        setupLeftBarButton()
+        setupRightBarButton()
         setupProfile()
         setupEditProfileButton()
         setupLoginUserPost()
@@ -46,6 +47,7 @@ class MyPageViewController: UIViewController {
         if isUpdated {
             user = UserDefaultsManager.shared.getLoginUser()
             setupProfile()
+            setupLeftBarButton()
             isUpdated = false
         }
     }
@@ -98,7 +100,7 @@ class MyPageViewController: UIViewController {
         flowLayout.minimumLineSpacing = CVCell1.spacingWidth
     }
     
-    func setupNavigationBar() {
+    func setupLeftBarButton() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: user.account, style: .plain, target: self, action: nil)
         
         let barButtonTextAttributes: [NSAttributedString.Key: Any] = [
@@ -107,7 +109,9 @@ class MyPageViewController: UIViewController {
         ]
         let leftButton = self.navigationItem.leftBarButtonItem
         leftButton?.setTitleTextAttributes(barButtonTextAttributes, for: .normal)
-        
+    }
+    
+    func setupRightBarButton() {
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium)
         
         let moreButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))

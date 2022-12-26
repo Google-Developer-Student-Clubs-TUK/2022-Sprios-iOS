@@ -84,7 +84,7 @@ class UserNetManager {
             // 원하는 모델이 있다면, JSONDecoder로 decode코드로 구현 ⭐️
             print(String(decoding: safeData, as: UTF8.self))
             
-            guard let response = response as? HTTPURLResponse else { return }
+            guard response is HTTPURLResponse else { return }
             
             completion()
         }.resume()
@@ -152,7 +152,7 @@ class UserNetManager {
                 return
             }
             
-            guard let response = response as? HTTPURLResponse else { return }
+            guard response is HTTPURLResponse else { return }
             
             // 옵셔널 바인딩
             guard let safeData = data else {
@@ -181,7 +181,6 @@ class UserNetManager {
             "introduce" : profile.introduce
         ]
 
-        let uuid = UUID().uuidString
         let headers: HTTPHeaders = ["Content-Type" : "multipart/form-data"]
 
         AF.upload(multipartFormData: { (multipartFormData) in

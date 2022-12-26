@@ -19,7 +19,6 @@ class PostNetManager {
 
         let content = model.content ?? ""
 
-        let uuid = UUID().uuidString
         let headers: HTTPHeaders = ["Content-Type" : "multipart/form-data"]
 
         AF.upload(multipartFormData: { (multipartFormData) in
@@ -73,7 +72,7 @@ class PostNetManager {
             // 원하는 모델이 있다면, JSONDecoder로 decode코드로 구현 ⭐️
             print(String(decoding: safeData, as: UTF8.self))
             
-            guard let response = response as? HTTPURLResponse else { return }
+            guard response is HTTPURLResponse else { return }
             
             do {
                 let decoder = JSONDecoder()
@@ -116,7 +115,7 @@ class PostNetManager {
             // 원하는 모델이 있다면, JSONDecoder로 decode코드로 구현 ⭐️
             print(String(decoding: safeData, as: UTF8.self))
             
-            guard let response = response as? HTTPURLResponse else { return }
+            guard response is HTTPURLResponse else { return }
             
             do {
                 let decoder = JSONDecoder()
