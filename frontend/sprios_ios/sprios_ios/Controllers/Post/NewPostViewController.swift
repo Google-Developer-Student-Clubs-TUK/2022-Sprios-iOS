@@ -38,33 +38,33 @@ class NewPostViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        guard let vcStack =
+                self.navigationController?.viewControllers else { return }
+        for vc in vcStack {
+            if let home = vc as? HomeViewController {
+                home.setupPosts()
+                break
+            }
+        }
+        
+        
+        
+    }
+    
     @objc func rightBarButtonTapped() {
         print(#function)
         let profileImage = image.jpegData(compressionQuality: 1)!
         let content = postTextView.text
         
         let newPost = NewPost(content: content, images: [profileImage])
-        uploadNewPost(with: newPost) { bool in
-            if bool {
-                DispatchQueue.main.async {
-                    self.navigationController?.popToRootViewController(animated: true)
-                }
-            } else {
-                print("실패")
+        PostNetManager.shared.uploadNewPost(with: newPost) { status in
+            if status != 200 { return }
+            DispatchQueue.main.async {
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
-        //let post = Post(images: [profileImage], content: content)
-        
-        //        PostNetManager.shared.createPost(post: post) { statusCode in
-        //            if statusCode == 200 {
-        //                DispatchQueue.main.async {
-        //
-        //                    self.navigationController?.popToRootViewController(animated: true)
-        //                }
-        //            } else {
-        //                print("게시물 생성 에러")
-        //            }
-        //        }
     }
     
 }

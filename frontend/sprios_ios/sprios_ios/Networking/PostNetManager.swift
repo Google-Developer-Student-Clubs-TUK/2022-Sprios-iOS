@@ -7,13 +7,41 @@
 
 import Foundation
 import UIKit
+import Alamofire
+
 
 class PostNetManager {
     static let shared = PostNetManager()
     private init() {}
     
-    func createPost(post: Post, completion: @escaping (Int)->()) {
-        
+    func uploadNewPost(with model: NewPost,
+                             completion: @escaping ((Int) -> Void)){
+        print(#function)
+        let content = model.content ?? ""
+
+        let uuid = UUID().uuidString
+        let headers: HTTPHeaders = ["Content-Type" : "multipart/form-data"]
+
+        AF.upload(multipartFormData: { (multipartFormData) in
+
+            multipartFormData.append(content.data(using: .utf8)!,
+                                     withName: "content", mimeType: "multipart/form-data;charset=UTF-8")
+
+            if let imageArray = model.images {
+                for image in imageArray {
+                    multipartFormData.append(image,
+                                             withName: "images",
+                                             fileName: "\(image).jpg",
+                                             mimeType: "image/jpeg")
+                }
+            }
+
+        }, to: "http://3.35.24.16:8080/api/posts", method: .post, headers: headers).responseJSON { (response) in
+
+            guard let statusCode = response.response?.statusCode else { return }
+            print(statusCode)
+            completion(statusCode)
+        }
     }
     
     func getLoginUserPosts(completion: @escaping (PostData)->()) {
@@ -62,7 +90,7 @@ class PostNetManager {
     func getPosts(page: Int, completion: @escaping (PostData)->()) {
         
         // 전체 게시물 중 사이즈를 3씩 쪼개서 0번 페이지를 조회
-        guard let url = URL(string: "http://3.35.24.16:8080/api/posts/page/\(page)?size=2") else {
+        guard let url = URL(string: "http://3.35.24.16:8080/api/posts/page/\(page)?size=5") else {
             print("Error: cannot create URL")
             return
         }

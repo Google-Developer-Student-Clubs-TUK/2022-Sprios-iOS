@@ -78,20 +78,20 @@ class ProfileEditViewController: UIViewController {
 //
 //        self.navigationController?.popViewController(animated: true)
         
-        let acc = usernameTextField.text!
-        let nm = nameTextField.text!
-        let introd = introduceTextField.text!
-        let img = profileImage.image?.pngData()
-        
-        let prof = NewProfile(account: acc, name: nm, introduce: introd, image: img)
-        
-        uploadNewProfile(with: prof) { bool in
-            if bool {
-                print("성공")
-            } else {
-                print("실패")
-            }
-        }
+//        let acc = usernameTextField.text!
+//        let nm = nameTextField.text!
+//        let introd = introduceTextField.text!
+//        let img = profileImage.image?.pngData()
+//        
+//        let prof = NewProfile(account: acc, name: nm, introduce: introd, image: img)
+//        
+//        uploadNewProfile(with: prof) { bool in
+//            if bool {
+//                print("성공")
+//            } else {
+//                print("실패")
+//            }
+//        }
     }
     
     @objc func profileImageTapped() {

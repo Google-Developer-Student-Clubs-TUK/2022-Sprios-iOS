@@ -30,3 +30,8 @@ struct Post: Codable {
         case user = "memberPostInfoResponse"
     }
 }
+
+struct NewPost {
+    let content: String?
+    let images: [Data]?
+}

@@ -88,6 +88,7 @@ class HomeViewController: UIViewController {
     func setupPosts() {
         PostNetManager.shared.getPosts(page: 0) { postData in
             self.postData = postData
+            self.pageCount = 0
             DispatchQueue.main.async {
                 self.feedTableView.reloadData()
             }
