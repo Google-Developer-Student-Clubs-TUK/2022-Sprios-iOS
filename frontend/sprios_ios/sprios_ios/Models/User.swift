@@ -27,3 +27,10 @@ struct ProfileImage: Codable {
     var imgName: String?
     var imgUUID: String?
 }
+
+struct NewProfile {
+    let account: String
+    let name: String
+    let introduce: String
+    let image: Data?
+}

@@ -44,6 +44,7 @@ class MyPageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if isUpdated {
+            user = UserDefaultsManager.shared.getLoginUser()
             setupProfile()
             isUpdated = false
         }

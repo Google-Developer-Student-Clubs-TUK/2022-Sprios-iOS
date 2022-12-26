@@ -56,7 +56,11 @@ class NewPostViewController: UIViewController {
     @objc func rightBarButtonTapped() {
         print(#function)
         let profileImage = image.jpegData(compressionQuality: 1)!
-        let content = postTextView.text
+        var content = ""
+        
+        if postTextView.tintColor != .lightGray {
+            content = postTextView.text
+        }
         
         let newPost = NewPost(content: content, images: [profileImage])
         PostNetManager.shared.uploadNewPost(with: newPost) { status in

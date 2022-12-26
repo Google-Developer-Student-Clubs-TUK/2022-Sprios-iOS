@@ -16,7 +16,7 @@ class PostNetManager {
     
     func uploadNewPost(with model: NewPost,
                              completion: @escaping ((Int) -> Void)){
-        print(#function)
+
         let content = model.content ?? ""
 
         let uuid = UUID().uuidString

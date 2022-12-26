@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class UserNetManager {
     static let shared = UserNetManager()
@@ -89,7 +90,6 @@ class UserNetManager {
         }.resume()
     }
 
-    
     func getUserData(completion: @escaping (Int, User) -> Void) {
         
         guard let url = URL(string: "http://3.35.24.16:8080/api/members/info") else {
@@ -173,5 +173,35 @@ class UserNetManager {
             
         }.resume()
     }
+    
+    func updateUserProfile(profile: NewProfile, completion: @escaping ()->()) {
+        let parameters = [
+            "account" : profile.account,
+            "name" : profile.name,
+            "introduce" : profile.introduce
+        ]
+
+        let uuid = UUID().uuidString
+        let headers: HTTPHeaders = ["Content-Type" : "multipart/form-data"]
+
+        AF.upload(multipartFormData: { (multipartFormData) in
+            for (key, value) in parameters {
+                multipartFormData.append(value.data(using: .utf8)!,
+                                         withName: key, mimeType: "multipart/form-data;charset=UTF-8")
+            }
+            
+            multipartFormData.append(profile.image!,
+                                     withName: "images",
+                                     fileName: "\(profile.image!).jpg",
+                                     mimeType: "image/jpeg")
+
+        }, to: "http://3.35.24.16:8080/api/members/update", method: .post, headers: headers).responseJSON { (response) in
+
+            guard let statusCode = response.response?.statusCode else { return }
+            print(statusCode)
+            completion()
+        }
+    }
+
 }
 
