@@ -20,15 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpc-Aj-GxI">
-                                <rect key="frame" x="20" y="268" width="353" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="kp0-qI-KKU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uaO-x3-3Cy">
                                 <rect key="frame" x="30" y="368" width="333" height="220"/>
                                 <subviews>
@@ -68,23 +59,38 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="ZSu-Gt-xLl"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trt-ph-FpF">
+                                <rect key="frame" x="20" y="268" width="353" height="60"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="DEC-ee-gs1">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DEC-ee-gs1" secondAttribute="bottom" id="3qo-uq-W65"/>
+                                    <constraint firstItem="DEC-ee-gs1" firstAttribute="leading" secondItem="Trt-ph-FpF" secondAttribute="leading" id="6eE-6n-07R"/>
+                                    <constraint firstItem="DEC-ee-gs1" firstAttribute="top" secondItem="Trt-ph-FpF" secondAttribute="top" id="9HX-Dl-MQa"/>
+                                    <constraint firstAttribute="trailing" secondItem="DEC-ee-gs1" secondAttribute="trailing" id="Xpj-gK-vs2"/>
+                                    <constraint firstAttribute="height" constant="60" id="sfa-RL-YSW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dpc-Aj-GxI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2qa-jm-QM8"/>
-                            <constraint firstItem="dpc-Aj-GxI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="165" id="4MU-ze-TIj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dpc-Aj-GxI" secondAttribute="trailing" constant="20" id="LHF-bj-8cq"/>
-                            <constraint firstItem="uaO-x3-3Cy" firstAttribute="top" secondItem="dpc-Aj-GxI" secondAttribute="bottom" constant="40" id="Z24-at-cPn"/>
-                            <constraint firstItem="dpc-Aj-GxI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bKP-0T-jaN"/>
+                            <constraint firstItem="uaO-x3-3Cy" firstAttribute="top" secondItem="Trt-ph-FpF" secondAttribute="bottom" constant="40" id="47d-Vv-f3g"/>
+                            <constraint firstItem="Trt-ph-FpF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VwU-Ci-kSE"/>
+                            <constraint firstItem="Trt-ph-FpF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="165" id="fQF-dR-ibM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uaO-x3-3Cy" secondAttribute="trailing" constant="30" id="nnW-Sx-91e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Trt-ph-FpF" secondAttribute="trailing" constant="20" id="ofD-E2-ZyB"/>
                             <constraint firstItem="uaO-x3-3Cy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="z8C-Al-JRi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AGQ-Qz-WD4"/>
                     <connections>
                         <outlet property="idTextField" destination="eVQ-dZ-RhK" id="rce-IF-R2Y"/>
-                        <outlet property="instagramLabel" destination="dpc-Aj-GxI" id="OTp-FL-v0x"/>
                         <outlet property="joinButton" destination="IEU-KM-gR3" id="yge-8x-riY"/>
                         <outlet property="loginButton" destination="7vW-4W-42R" id="kP3-B5-aBU"/>
                         <outlet property="passwdTextField" destination="oqB-lv-fHI" id="yMa-Hq-WhZ"/>
@@ -1473,6 +1479,7 @@
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="logo" width="103" height="29"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.crop.square" catalog="system" width="128" height="114"/>
