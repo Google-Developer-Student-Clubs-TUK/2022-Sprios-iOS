@@ -53,11 +53,11 @@ class ProfileEditViewController: UIViewController {
     
     @objc func rightBarButtonTapped() {
         let index = self.navigationController!.viewControllers.count - 2
-        let vc = self.navigationController?.viewControllers[index] as! MyPageViewController
+        let vc = self.navigationController?.viewControllers[index] as! ProfilePageViewController
 
         guard let account = usernameTextField.text else { return }
 
-        let user = UserDefaultsManager.shared.getLoginUser()
+        let user = UserDefaults.standard.getLoginUser()
 
         if user?.account != usernameTextField.text {
             UserNetManager.shared.checkingUser(account: account) { message in
@@ -87,8 +87,8 @@ class ProfileEditViewController: UIViewController {
 
         UserNetManager.shared.updateUserProfile(profile: prof) {
             UserNetManager.shared.getUserData { status, user in
-                UserDefaultsManager.shared.unsetLoginUser()
-                UserDefaultsManager.shared.setLoginUser(user: user)
+                UserDefaults.standard.unsetLoginUser()
+                UserDefaults.standard.setLoginUser(user: user)
                 DispatchQueue.main.async {
                     self.navigationController?.popViewController(animated: true)
                 }

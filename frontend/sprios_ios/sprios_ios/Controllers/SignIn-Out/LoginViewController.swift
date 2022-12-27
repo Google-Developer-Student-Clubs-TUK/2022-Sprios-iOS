@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var instagramLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
                             
-                            UserDefaultsManager.shared.setLoginUser(user: user)
+                            UserDefaults.standard.setLoginUser(user: user)
                             
                             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
                         }
@@ -95,7 +95,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UITextFieldDelegate
-extension ViewController: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.returnKeyType == .next {
             passwdTextField.becomeFirstResponder()

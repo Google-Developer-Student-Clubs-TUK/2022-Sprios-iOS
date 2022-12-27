@@ -12,7 +12,8 @@ class NewPostViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var postTextView: UITextView!
     
-    private let textViewPlaceHolder: String = "문구 입력."
+    private let textViewPlaceHolder: String = "문구 입력..."
+    var isUpdate: Bool = false
     var image: UIImage!
     
     override func viewDidLoad() {
@@ -56,9 +57,9 @@ class NewPostViewController: UIViewController {
     @objc func rightBarButtonTapped() {
         print(#function)
         let profileImage = image.jpegData(compressionQuality: 1)!
-        var content = ""
+        var content = " "
         
-        if postTextView.tintColor != .lightGray {
+        if isUpdate {
             content = postTextView.text
         }
         
@@ -78,12 +79,14 @@ extension NewPostViewController: UITextViewDelegate {
         if textView.text == textViewPlaceHolder {
             textView.text = nil
             textView.textColor = .black
+            isUpdate = true
         }
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             textView.text = textViewPlaceHolder
             textView.textColor = .lightGray
+            isUpdate = false
         }
     }
 }

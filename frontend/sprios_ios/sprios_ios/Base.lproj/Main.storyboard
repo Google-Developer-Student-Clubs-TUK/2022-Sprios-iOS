@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,8 +176,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mx2-iY-D7v" userLabel="Post">
                                 <rect key="frame" x="0.0" y="59" width="393" height="130"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jju-MZ-s6a">
-                                        <rect key="frame" x="15" y="16.666666666666657" width="70" height="97"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jju-MZ-s6a">
+                                        <rect key="frame" x="15" y="15" width="70" height="100"/>
                                         <color key="tintColor" systemColor="systemGrayColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="RJV-GW-wDP"/>
@@ -574,10 +574,10 @@
             </objects>
             <point key="canvasLocation" x="3506" y="795"/>
         </scene>
-        <!--My Page View Controller-->
+        <!--Profile Page View Controller-->
         <scene sceneID="Jkl-xz-YzE">
             <objects>
-                <viewController id="pNo-Nh-FRi" customClass="MyPageViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pNo-Nh-FRi" customClass="ProfilePageViewController" customModule="sprios_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9IA-Vu-s2i">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1476,7 +1476,6 @@
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.crop.square" catalog="system" width="128" height="114"/>
-        <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="play.rectangle" catalog="system" width="128" height="93"/>
         <image name="squareshape.split.3x3" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">

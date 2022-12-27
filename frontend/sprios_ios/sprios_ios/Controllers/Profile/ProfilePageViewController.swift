@@ -7,13 +7,7 @@
 
 import UIKit
 
-struct CVCell1 {
-    static let spacingWidth: CGFloat = 1
-    static let cellColumns: CGFloat = 3
-    private init() {}
-}
-
-class MyPageViewController: UIViewController {
+class ProfilePageViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -33,19 +27,20 @@ class MyPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        user = UserDefaultsManager.shared.getLoginUser()
+        user = UserDefaults.standard.getLoginUser()
         
         setupCollectionView()
         setupLeftBarButton()
         setupRightBarButton()
         setupProfile()
         setupEditProfileButton()
-        setupLoginUserPost()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setupLoginUserPost()
         if isUpdated {
-            user = UserDefaultsManager.shared.getLoginUser()
+            user = UserDefaults.standard.getLoginUser()
             setupProfile()
             setupLeftBarButton()
             isUpdated = false
@@ -65,7 +60,7 @@ class MyPageViewController: UIViewController {
     }
     
     func setupLoginUserPost() {
-        PostNetManager.shared.getLoginUserPosts { posts in
+        PostNetManager.shared.getLoginUserPosts(user: user) { posts in
             self.postData = posts
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -156,7 +151,7 @@ class MyPageViewController: UIViewController {
 }
 
 // MARK: - CollectionView Delegate, DataSource
-extension MyPageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ProfilePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return postData?.posts.count ?? 0

@@ -7,12 +7,6 @@
 
 import UIKit
 
-struct CVCell {
-    static let spacingWidth: CGFloat = 1
-    static let cellColumns: CGFloat = 4
-    private init() {}
-}
-
 class PhotoSelectorViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
