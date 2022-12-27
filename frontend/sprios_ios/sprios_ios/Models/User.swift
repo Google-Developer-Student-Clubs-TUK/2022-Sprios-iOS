@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import UIKit
 
 struct User: Codable {
+    var id: Int?                    // 고유 식별자
     var account: String?            // 아이디
     var password: String?           // 비밀번호
     var name: String?               // 이름
@@ -16,6 +16,21 @@ struct User: Codable {
     var phone: String?              // 핸드폰
     var gender: String?             // 성별
     var introduce: String?          // 소개글
-    var profileImage: Data?         // 프로필 사진
-    var profileImageUrl: String?    // 프로필 사진 URL
+    var image: ProfileImage?        // 이미지데이터
+    
+    var imageUrl: String?    // 서버로부터 전달받는 유저 프로필 이미지
+}
+
+struct ProfileImage: Codable {
+    var imgUrl: String?
+    var imgType: String?
+    var imgName: String?
+    var imgUUID: String?
+}
+
+struct NewProfile {
+    let account: String
+    let name: String
+    let introduce: String
+    let image: Data?
 }

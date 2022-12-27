@@ -8,9 +8,30 @@
 import Foundation
 import UIKit
 
-struct Post: Codable {
-    var postImage: Data
-    var content: String?
+
+struct PostData: Codable {
+    var posts: [Post]
     
-    // 유저 프로필 사진 + 유저 아이디
+    enum CodingKeys: String, CodingKey {
+        case posts = "data"
+    }
+}
+
+// 서버로부터 받는 Post 데이터 형식
+struct Post: Codable {
+    let content: String?
+    let user: User?
+    let imageUrls: [String]?
+    let likeCount: Int?
+    let createdAt: [Int]?
+    
+    enum CodingKeys: String, CodingKey {
+        case content, imageUrls, likeCount, createdAt
+        case user = "memberPostInfoResponse"
+    }
+}
+
+struct NewPost {
+    let content: String?
+    let images: [Data]?
 }
