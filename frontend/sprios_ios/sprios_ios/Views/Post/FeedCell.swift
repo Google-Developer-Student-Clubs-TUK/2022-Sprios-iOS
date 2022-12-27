@@ -16,8 +16,9 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var accountBotLabel: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     
-    @IBOutlet weak var content: UILabel!
     
+    @IBOutlet weak var like: UILabel!
+    @IBOutlet weak var content: UILabel!
     @IBOutlet weak var createdAt: UILabel!
     
     var dateCreated: [Int]? {

@@ -781,6 +781,7 @@
                         <outlet property="collectionView" destination="4IC-W5-8Zn" id="vTV-Vq-GJx"/>
                         <outlet property="editProfileButton" destination="X66-rn-KE7" id="Znk-Nw-F9W"/>
                         <outlet property="introduction" destination="fYN-RK-I6G" id="Dx5-jT-eWQ"/>
+                        <outlet property="postCount" destination="64p-kM-PEf" id="Ctj-gG-5A8"/>
                         <outlet property="profileImage" destination="eLq-kC-jjp" id="VvX-vz-FJk"/>
                         <outlet property="username" destination="lKv-dI-r2E" id="P3f-3c-OQw"/>
                     </connections>

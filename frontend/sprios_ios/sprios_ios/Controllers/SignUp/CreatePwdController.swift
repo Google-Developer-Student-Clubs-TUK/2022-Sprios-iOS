@@ -31,7 +31,7 @@ class CreatePwdController: UIViewController {
         }
         
     }
-    func postMethod(_ param:User, completion: @escaping (Int) -> Void) {
+    func postMethod(_ param: User, completion: @escaping (Int) -> Void) {
         
         guard let url = URL(string: "http://3.35.24.16:8080/api/members") else {
             print("Error: cannot create URL")
@@ -63,7 +63,7 @@ class CreatePwdController: UIViewController {
             }
             // HTTP 200번대 정상코드인 경우만 다음 코드로 넘어감
             guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
-                print("Error: HTTP request failed")
+                print("Error: HTTP request failed - \(response)")
                 return
             }
             print(String(decoding: safeData, as: UTF8.self))
