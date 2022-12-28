@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
         
         setupTextField()
         setupButton()
-        setupUI()
+        //setupUI()
         
     }
     
@@ -41,9 +41,9 @@ class LoginViewController: UIViewController {
         joinButton.layer.cornerRadius = 5
     }
     
-    func setupUI() {
-        instagramLabel.font = UIFont(name: "Billabong", size: 60)
-    }
+//    func setupUI() {
+//        instagramLabel.font = UIFont(name: "Billabong", size: 60)
+//    }
     
     // 화면 터치 시 키보드 내려감
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

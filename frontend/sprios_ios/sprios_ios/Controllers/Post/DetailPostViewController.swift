@@ -61,6 +61,8 @@ extension DetailPostViewController: UITableViewDelegate, UITableViewDataSource {
         cell.account.text = post?.user?.account
         cell.accountBotLabel.text = post?.user?.account
         cell.content.text = post?.content
+        cell.dateCreated = post?.createdAt
+        cell.like.text = "좋아요 \((post?.likeCount)!)개"
         
         return cell
     }

@@ -14,8 +14,8 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var introduction: UILabel!
-    
     @IBOutlet weak var editProfileButton: UIButton!
+    @IBOutlet weak var postCount: UILabel!
     
     var user: User!
     var postData: PostData?
@@ -39,6 +39,8 @@ class ProfilePageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupLoginUserPost()
+    
+        // 프로필 업데이트 시
         if isUpdated {
             user = UserDefaults.standard.getLoginUser()
             setupProfile()
@@ -52,7 +54,6 @@ class ProfilePageViewController: UIViewController {
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         
         let imageUrl = user.image?.imgUrl
-        
         self.profileImage.loadImage(imageUrl: imageUrl)
         self.username.text = self.user.name
         self.introduction.text = self.user.introduce
@@ -63,6 +64,7 @@ class ProfilePageViewController: UIViewController {
         PostNetManager.shared.getLoginUserPosts(user: user) { posts in
             self.postData = posts
             DispatchQueue.main.async {
+                self.postCount.text = "\(posts.posts.count)"
                 self.collectionView.reloadData()
             }
         }
@@ -165,9 +167,11 @@ extension ProfilePageViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailPostVC = storyboard?.instantiateViewController(withIdentifier: "DetailPostVC") as! DetailPostViewController
+        
         detailPostVC.indexPath = indexPath
         detailPostVC.user = user
         detailPostVC.postData = postData
+        
         self.navigationController?.pushViewController(detailPostVC, animated: true)
     }
     
