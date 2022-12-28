@@ -13,6 +13,46 @@ class UserNetManager {
     static let shared = UserNetManager()
     private init() {}
     
+    func createUser(user: User, completion: @escaping (Int)->()) {
+        guard let url = URL(string: "http://3.35.24.16:8080/api/members") else {
+            print("Error: cannot create URL")
+            return
+        }
+        
+        guard let jsonData = try? JSONEncoder().encode(user) else {
+            print("Error: Trying to convert model to JSON data")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type") // 요청타입 JSON
+        request.setValue("application/json", forHTTPHeaderField: "Accept") // 응답타입 JSON
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard error == nil else {
+                print("Error: error calling POST")
+                print(error!)
+                return
+            }
+            // 옵셔널 바인딩
+            guard let safeData = data else {
+                print("Error: Did not receive data")
+                return
+            }
+            // HTTP 200번대 정상코드인 경우만 다음 코드로 넘어감
+            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
+                print("Error: HTTP request failed - \(response)")
+                return
+            }
+            print(String(decoding: safeData, as: UTF8.self))
+            
+            completion(response.statusCode)
+        }.resume()
+    }
+    
     func loginUser(account: String, password: String, completion: @escaping (Int) -> ()){
         let param = ["account" : account, "password" : password]
         
@@ -175,6 +215,7 @@ class UserNetManager {
     }
     
     func updateUserProfile(profile: NewProfile, completion: @escaping ()->()) {
+
         let parameters = [
             "account" : profile.account,
             "name" : profile.name,
@@ -186,7 +227,7 @@ class UserNetManager {
         AF.upload(multipartFormData: { (multipartFormData) in
             for (key, value) in parameters {
                 multipartFormData.append(value.data(using: .utf8)!,
-                                         withName: key, mimeType: "multipart/form-data;charset=UTF-8")
+                                         withName: key, mimeType: "text/plain;charset=UTF-8")
             }
             
             multipartFormData.append(profile.image!,

@@ -73,14 +73,10 @@ class ProfileEditViewController: UIViewController {
         }
 
         vc.isUpdated = true
-//
-//        // 프로필 업데이트 통신 > 유저정보 가져오기 > UserDefault 재설정
-//
-//
         
         let acc = usernameTextField.text!
         let nm = nameTextField.text!
-        let introd = introduceTextField.text!
+        let introd = introduceTextField.text ?? ""
         let img = profileImage.image?.pngData()
         
         let prof = NewProfile(account: acc, name: nm, introduce: introd, image: img)
@@ -96,10 +92,19 @@ class ProfileEditViewController: UIViewController {
         }
     }
     
-    @objc func profileImageTapped() {
+    func profileEdit() {
         let profileImgEditVC = storyboard?.instantiateViewController(withIdentifier: "ProfileImgSelVC") as! ProfileImgSelViewController
         
         navigationController?.pushViewController(profileImgEditVC, animated: true)
+    }
+    
+    
+    @IBAction func profileImageButtonTapped(_ sender: UIButton) {
+        profileEdit()
+    }
+    
+    @objc func profileImageTapped() {
+        profileEdit()
     }
 
 }
